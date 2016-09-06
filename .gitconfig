@@ -1,0 +1,9 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = Ardalan Samimi
+	email = ardalan.samimi@gmail.com
+[core]
+	excludesfile = /Users/ardalansamimi/.gitignore_global

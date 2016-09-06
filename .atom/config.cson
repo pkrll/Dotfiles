@@ -1,0 +1,68 @@
+"*":
+  "Remote-FTP":
+    autoUploadOnSave: "only when connected"
+  core:
+    disabledPackages: [
+      "language-go"
+      "language-mustache"
+      "minimap-find-and-replace"
+    ]
+    openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: []
+    projectHome: "/Users/ardalansamimi/Public/Sites/"
+    themes: [
+      "string-theory"
+      "deep-space-syntax"
+    ]
+  editor:
+    fontSize: 12
+    invisibles: {}
+    preferredLineLength: 180
+    scrollPastEnd: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    softWrapHangingIndent: 5
+  "exception-reporting":
+    userId: "76385205-bcac-3078-d778-72e537ad59f2"
+  "fuzzy-finder":
+    ignoredNames: [
+      ".git"
+      "._*"
+      "vendor"
+    ]
+  "glacier-dark-ui": {}
+  "markdown-preview-plus":
+    breakOnSingleNewline: true
+    openPreviewInSplitPane: false
+  minimap:
+    plugins:
+      "find-and-replace": false
+      "find-and-replaceDecorationsZIndex": 0
+  "seti-icons": {}
+  todo:
+    a_pattern: "TODO\\:.+|FIXME\\:.+|CHANGED\\:.+|IDEA\\:.+|NOTE\\:.+|REVIEW\\:.+|BUG\\:.+|HACK\\:.+"
+  "todo-show":
+    showInTable: []
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
+".apache-config.mod_perl.source":
+  editor:
+    preferredLineLength: 180
+    softWrapHangingIndent: 5
+".apache-config.source":
+  editor:
+    preferredLineLength: 180
+    softWrapHangingIndent: 5
+".clojure.source":
+  editor:
+    preferredLineLength: 180
+    softWrapHangingIndent: 5
+".restructuredtext.text":
+  editor:
+    preferredLineLength: 180
+    softWrapHangingIndent: 5
+".text.todo":
+  editor:
+    preferredLineLength: 180
+    softWrapHangingIndent: 5
