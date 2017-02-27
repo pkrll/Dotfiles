@@ -6,4 +6,11 @@
 	name = Ardalan Samimi
 	email = ardalan.samimi@gmail.com
 [core]
-	excludesfile = /Users/ardalansamimi/.gitignore_global
+	excludesfile = /Users/ardalansamimi/.dotfiles/.gitignore_global
+	editor = /usr/bin/nano
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
+[credential]
+	helper = osxkeychain
