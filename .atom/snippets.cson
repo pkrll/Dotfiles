@@ -1,0 +1,51 @@
+# Snippets
+
+# Haskell snippets
+'.source.haskell':
+  'Normal function without specification':
+    prefix: 'fun'
+    body: """
+${1:functionIdentifier} :: ${2:Type}
+${1:functionIdentifier} ${3:pattern} = ${4:definition}
+    """
+  'Normal function with specification':
+    prefix: 'funs'
+    body: """
+{- ${1:functionIdentifier} ${2:arguments}
+   PRE:           ${3:True}
+   POST:          ${4:post-condition on the result, in terms of the arguments}
+   ${5:SIDE EFFECTS:  ${6:None}
+   }EXAMPLES:      ${1:functionIdentifier} $8 == $9
+${10:   VARIANT:       ${11:None}
+}-}
+${1:functionIdentifier} :: ${12:Type}
+${1:functionIdentifier} ${13:pattern = definition}
+    """
+  'Recursive function':
+    prefix: 'funRec'
+    body: """
+${1:functionName} :: ${2:Type}
+${1:functionName} ${3:pattern} = ${4:definition}
+${1:functionName} ${5:pattern} = ${6:definition}
+    """
+  'Guarded function':
+    prefix: 'funGua'
+    body: """
+${1:functionName} :: ${2:Type}
+${1:guardedFunction} ${3:arguments}
+  | ${4:condition} = ${5:definition}
+  | ${6:otherwise} = ${7:definition}
+    """
+  'Function specification':
+    prefix: 'spec'
+    body: """
+{- ${1:functionIdentifier} ${2:arguments}
+   PRE:           ${3:pre-condition on the arguments}
+   POST:          ${4:post-condition on the result, in terms of the arguments}${5:
+   SIDE EFFECTS:  ${6:if any, including exceptions}}
+   EXAMPLES:      ${7:${1:functionIdentifier} == }
+   VARIANT:       ${8:None}
+-}"""
+  'Lambda function':
+    prefix: 'lambda'
+    body: """(\\\\${1:x} -> ${2:definition})"""

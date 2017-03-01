@@ -13,7 +13,7 @@
 ##########
 syncdir=~/.dotfiles
 backdir=~/.dotfiles_backup
-files=".bashrc .bash_profile .vimrc .vim .gitconfig"
+files=".inputrc .bashrc .bash_profile .vimrc .vim .gitconfig" # .atom/snippets.cson .atom/keymap.cson"
 
 ##########
 # Setup

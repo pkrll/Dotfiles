@@ -23,8 +23,12 @@ if [ -f ~/.dotfiles/.bash_aliases ]; then
 	. ~/.dotfiles/.bash_aliases
 fi
 
-# For quick install
-alias makesym=".makesym.sh"
+#############
+# FUNCTIONS
+############
+if [ -f ~/.dotfiles/.functions ]; then
+	. ~/.dotfiles/.functions
+fi
 
 #############
 # COLORS
