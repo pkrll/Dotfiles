@@ -6,7 +6,8 @@ export HISTCONTROL=erasedups:ignorespace
 HISTSIZE=500
 HISTFILESIZE=500
 
-export PS1="\[\033[01;31m\]\u: \[\033[01;33m\]\w \[\033[00m\]$ \[\033[01;33m\]\`parse_git_branch\`\[\033[00m\] "
+# The prompt
+export PS1="\[\033[01;31m\]\u: \[\033[01;33m\]\w\[\033[01;36m\]\`parse_git_branch\`\[\033[00m\] $ "
 force_color_prompt=yes
 
 #############
@@ -34,4 +35,4 @@ fi
 # COLORS
 #############
 export CLICOLOR=1
-export LSCOLORS=ExGxCxdxBxegEgAgAcAd
+export LSCOLORS=cxfxdxdxBxegEgAgAcAd
