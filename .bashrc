@@ -6,15 +6,21 @@ export HISTCONTROL=erasedups:ignorespace
 HISTSIZE=500
 HISTFILESIZE=500
 
-# The prompt
-export PS1="\[\033[01;31m\]\u: \[\033[01;33m\]\w\[\033[01;36m\]\`parse_git_branch\`\[\033[00m\] $ "
-force_color_prompt=yes
-
 #############
 # The Git prompt
 #############
 if [ -f ~/.dotfiles/.gitprompt ]; then
 	. ~/.dotfiles/.gitprompt
+fi
+
+#############
+# COLORS
+#############
+export CLICOLOR=1
+export LSCOLORS=cxfxdxdxBxegEgAgAcAd
+
+if [ -f ~/.dotfiles/.colors ]; then
+	. ~/.dotfiles/.colors
 fi
 
 #############
@@ -32,7 +38,7 @@ if [ -f ~/.dotfiles/.functions ]; then
 fi
 
 #############
-# COLORS
+# The prompt
 #############
-export CLICOLOR=1
-export LSCOLORS=cxfxdxdxBxegEgAgAcAd
+export PS1="${Red}\u: ${GreenBold}\w ${CyanBold}\`parse_git_branch\`${YellowBold}\`parse_git_status\`\[\033[00m\]$ "
+force_color_prompt=yes
