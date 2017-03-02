@@ -40,7 +40,7 @@ function parse_git_status() {
 		bits="*${bits}"
 	fi
 	if [ ! "${bits}" == "" ]; then
-		echo "[${bits}] "
+		echo "(${bits}) "
 	else
 		echo ""
 	fi
