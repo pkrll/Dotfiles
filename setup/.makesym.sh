@@ -8,12 +8,12 @@
 ############################
 
 ##########
-# The .dotsfiles and backup directories, as well as
+# The .dotfiles and backup directories, as well as
 # the list of files and folders to symlink in homedir
 ##########
 syncdir=~/.dotfiles
 backdir=~/.dotfiles_backup
-files=".inputrc .bashrc .bash_profile .vimrc .vim .gitconfig" # .atom/snippets.cson .atom/keymap.cson"
+files=".inputrc .bashrc .bash_profile .vimrc .vim .gitconfig .atom/snippets.cson .atom/keymap.cson"
 
 ##########
 # Setup
@@ -32,13 +32,24 @@ fileExists() {
 backupFile () {
   echo "Moving $1 from ~ to $2"
   if fileExists $2/$1; then
-    fileName=$1-`date +%Y-%m-%d`
+    fileName=$1-`date +%Y-%m-%d-%H%M%S`
   else
     fileName=$1
   fi
 
+  # Need to create subdirectories
+  dirName=`dirname $1`
+  if [ ! $dirName == "." ] && [ ! -d $2/$dirName ]; then
+    mkdir $2/$dirName
+  fi
+
   mv ~/$1 $2/$fileName
 }
+
+
+echo "--------------------------------"
+echo "Running makesym.sh..."
+echo ""
 
 for file in $files; do
   if fileExists $file; then
@@ -47,7 +58,11 @@ for file in $files; do
       backupFile $file $backdir
     fi
 
-    echo "Creating symlink to $file in home directory."
+    echo "Creating symlink to $syncdir/$file in home directory."
     ln -s $syncdir/$file ~/$file
   fi
 done
+
+echo ""
+echo "Done"
+echo "--------------------------------"
