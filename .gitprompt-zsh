@@ -1,0 +1,62 @@
+
+git_branch() {
+  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+
+  if [[ ! $BRANCH == "" ]]; then
+    echo " [%F{yellow}on branch %B${BRANCH}%f%b]"
+  else
+    echo ""
+  fi
+}
+
+git_status() {
+  GIT_PROMPT=""
+
+  if [[ -n `git_branch` ]]; then
+
+    # Untracked
+    if [[ -n `git ls-files -o --exclude-standard` ]]; then
+      if [[ -n $GIT_PROMPT ]]; then
+        PROMPT="untracked, "
+      else
+        PROMPT="untracked"
+      fi
+
+      GIT_PROMPT="%F{green}$PROMPT%f$GIT_PROMPT"
+
+      unset $PROMPT
+    fi
+
+    # Modified
+    if ! git diff --quiet; then
+      if [[ -n $GIT_PROMPT ]]; then
+        PROMPT="modified, "
+      else
+        PROMPT="modified"
+      fi
+
+      GIT_PROMPT="%F{yellow}$PROMPT%f$GIT_PROMPT"
+
+      unset $PROMPT
+    fi
+
+    # Staged
+    if ! git diff --cached --quiet; then
+      if [[ -n $GIT_PROMPT ]]; then
+        PROMPT="staged, "
+      else
+        PROMPT="staged"
+      fi
+
+      GIT_PROMPT="%F{green}$PROMPT%f$GIT_PROMPT"
+
+      unset $PROMPT
+    fi
+
+    if [[ -n $GIT_PROMPT ]]; then
+      echo "%F{cyan}(${GIT_PROMPT}%F{cyan})%f"
+    else
+      echo "%F{cyan}(%F{green}Up-to-date%f)%f"
+    fi
+  fi
+}
