@@ -2,6 +2,15 @@
 
 # Haskell snippets
 '.source.haskell':
+  'Datatype definition':
+    prefix: 'data'
+    body: """
+{- REPRESENTATION CONVENTION: ${3:... description of how the datatype represents data ...}
+   REPRESENTATION INVARIANT:  ${4... requirements on elements of the datatype that the code preserves at all times ...}
+-}
+data ${1:identifier} = ${2:constructor}
+    """
+'.source.haskell':
   'Normal function without specification':
     prefix: 'fun'
     body: """
