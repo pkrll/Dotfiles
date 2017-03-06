@@ -23,6 +23,13 @@ files=".zshrc .inputrc .bashrc .bash_profile .vimrc .vim .gitconfig .atom/snippe
 mkdir -p $backdir
 cd $syncdir
 
+echo "--------------------------------"
+echo "Running makesym.sh..."
+echo ""
+echo "Retrieving latest changes from the repository"
+echo ""
+git pull
+
 fileExists() {
   if [ -f "$1" ] || [ -d "$1" ]; then
     return 0
@@ -48,11 +55,8 @@ backupFile () {
   mv ~/$1 $2/$fileName
 }
 
-
 echo "--------------------------------"
-echo "Running makesym.sh..."
 echo ""
-
 for file in $files; do
   if fileExists $file; then
 

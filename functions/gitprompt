@@ -1,9 +1,13 @@
+#####################
+# Git Prompt for ZSH
+#
+#####################
 
 git_branch() {
   BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 
   if [[ ! $BRANCH == "" ]]; then
-    echo " [%F{yellow}on branch %B${BRANCH}%f%b]"
+    echo " [%F{yellow}on branch %B${BRANCH}%f%b%F{white}]"
   else
     echo ""
   fi
@@ -26,6 +30,20 @@ git_status() {
 
       unset $PROMPT
     fi
+
+    # Deleted
+    if git status &> /dev/null | grep -o "deleted" &> /dev/null; then
+      if [[ -n $GIT_PROMPT ]]; then
+        PROMPT="deleted, "
+      else
+        PROMPT="deleted"
+      fi
+
+      GIT_PROMPT="%F{red}$PROMPT%f$GIT_PROMPT"
+
+      unset $PROMPT
+    fi
+
 
     # Modified
     if ! git diff --quiet; then
@@ -74,3 +92,11 @@ git_status() {
     fi
   fi
 }
+
+if [[ $1 == branch ]]; then
+  git_branch
+fi
+
+if [[ $1 == status ]]; then
+  git_status
+fi
