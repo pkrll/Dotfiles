@@ -7,13 +7,15 @@
 # https://github.com/michaeljsmalley/dotfiles
 ############################
 
+#TODO: Fix setup for zsh
+
 ##########
 # The .dotfiles and backup directories, as well as
 # the list of files and folders to symlink in homedir
 ##########
 syncdir=~/.dotfiles
 backdir=~/.dotfiles_backup
-files=".inputrc .bashrc .bash_profile .vimrc .vim .gitconfig .atom/snippets.cson .atom/keymap.cson"
+files=".zshrc .inputrc .bashrc .bash_profile .vimrc .vim .gitconfig .atom/snippets.cson .atom/keymap.cson"
 
 ##########
 # Setup
