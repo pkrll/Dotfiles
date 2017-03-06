@@ -53,6 +53,20 @@ git_status() {
       unset $PROMPT
     fi
 
+    # Ahead count
+    GIT_AHEAD=`git status -sb | grep -o '[0-9]'`
+    if [[ -n $GIT_AHEAD ]]; then
+      if [[ -n $GIT_PROMPT ]]; then
+        PROMPT="ahead by $GIT_AHEAD, "
+      else
+        PROMPT="ahead by $GIT_AHEAD"
+      fi
+
+      GIT_PROMPT="%F{cyan}$PROMPT%f$GIT_PROMPT"
+
+      unset $PROMPT
+    fi
+
     if [[ -n $GIT_PROMPT ]]; then
       echo "%F{cyan}(${GIT_PROMPT}%F{cyan})%f"
     else
