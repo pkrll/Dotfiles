@@ -1,5 +1,5 @@
 # SHELL PROMPT
-export PATH="~/.composer/vendor/bin:/usr/local/mysql/bin:/usr/local/mysql/support-files:/usr/local/bin:/Users/ardalansamimi/Public/Git/Bash/AMPStart:/Users/ardalansamimi/Library/Haskell/bin:/Users/ardalansamimi/.dotfiles/setup:$PATH"
+export PATH="~/.composer/vendor/bin:/usr/local/mysql/bin:/usr/local/mysql/support-files:/usr/local/bin:/Users/ardalansamimi/Public/Git/Bash/AMPStart:/Users/ardalansamimi/Library/Haskell/bin:~/.dotfiles/setup:$PATH"
 
 # Don't put duplicate lines or lines starting with space in the history
 export HISTCONTROL=erasedups:ignorespace
