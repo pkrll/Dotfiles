@@ -35,13 +35,14 @@ autoload -Uz clean compinit && compinit
 # Set PWD as terminal title
 # precmd () {print -Pn "\e]0;`PWD`\a"}
 
+autoload -U gitprompt
+RPROMPT='$(gitprompt status)'
+
 # For hyper term
 if [[ $TERM_PROGRAM == "Hyper" ]]; then
   autoload -Uz promptinit; promptinit
   prompt pure
 else
-  autoload -U gitprompt
   PS1='%F{blue}at %B%~%b%f%F{white} $(gitprompt branch)
 %F{magenta}%B❯%b%F{white} '
-  RPROMPT='$(gitprompt status)'
 fi
