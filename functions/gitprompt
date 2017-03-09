@@ -89,7 +89,7 @@ git_status() {
     if [[ -n $GIT_PROMPT ]]; then
       echo "%F{cyan}(${GIT_PROMPT}%F{cyan})%f"
     else
-      echo "%F{cyan}(%F{green}Up-to-date%f)%f"
+      echo "%F{cyan}(%F{green}%BUp-to-date%b%F{cyan})%f"
     fi
   fi
 }
