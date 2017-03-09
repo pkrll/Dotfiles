@@ -5,7 +5,6 @@ A total mess right now, and mainly for my own convenience, but if you want to us
 ```shell
 > git clone https://github.com/pkrll/Dotfiles
 > mv Dotfiles .dotfiles
-> makesym
 ```
 
-And that's it.
+Then run ``.makesym.sh`` in the ``setup`` folder. And that's it.

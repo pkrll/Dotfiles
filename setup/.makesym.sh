@@ -70,5 +70,8 @@ for file in $files; do
 done
 
 echo ""
-echo "Done"
+echo "Done linking."
+echo ""
+echo "Use the command resource to update"
+echo "your settings."
 echo "--------------------------------"
