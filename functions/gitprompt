@@ -31,6 +31,8 @@ git_status() {
         else
           PROMPT="%F{cyan}%BAhead by $AHEAD%f%b"
         fi
+
+        GIT_PROMPT="$GIT_PROMPT$PROMPT"
       fi
 
       if [[ ! BEHIND -eq 0 ]]; then
@@ -39,9 +41,9 @@ git_status() {
         else
           PROMPT="%F{magenta}%BBehind by $BEHIND%f%b"
         fi
-      fi
 
-      GIT_PROMPT="$GIT_PROMPT$PROMPT"
+        GIT_PROMPT="$GIT_PROMPT$PROMPT"
+      fi
 
       unset $PROMPT
       unset $BEHIND
@@ -95,7 +97,7 @@ git_status() {
         PROMPT="%F{green}%BStaged%f%b"
       fi
 
-      GIT_PROMPT="$GIT_PROMPT$PROMPT"
+      GIT_PROMPT="${GIT_PROMPT}${PROMPT}"
 
       unset $PROMPT
     fi
