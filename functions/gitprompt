@@ -78,7 +78,7 @@ git_status() {
       if [[ -n $GIT_PROMPT ]]; then
         PROMPT="%F{cyan}%Bahead by $GIT_AHEAD%f%b, "
       else
-        PROMPT="%F{cyan}%bahead by $GIT_AHEAD%f"
+        PROMPT="%F{cyan}%Bahead by $GIT_AHEAD%f"
       fi
 
       GIT_PROMPT="$PROMPT$GIT_PROMPT"
