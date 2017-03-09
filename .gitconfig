@@ -14,3 +14,9 @@
 	program = gpg2
 [credential]
 	helper = osxkeychain
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	unstage = reset HEAD --
+	last = log -1 HEAD

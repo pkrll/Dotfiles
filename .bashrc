@@ -7,38 +7,31 @@ HISTSIZE=500
 HISTFILESIZE=500
 
 #############
-# The Git prompt
-#############
-if [ -f ~/.dotfiles/.gitprompt ]; then
-	. ~/.dotfiles/.gitprompt
-fi
-
-#############
 # COLORS
 #############
 export CLICOLOR=1
 export LSCOLORS=cxfxdxdxBxegEgAgAcAd
 
-if [ -f ~/.dotfiles/.colors ]; then
-	. ~/.dotfiles/.colors
-fi
-
 #############
 # ALIASES
 ############
-if [ -f ~/.dotfiles/.bash_aliases ]; then
-	. ~/.dotfiles/.bash_aliases
+if [ -f ~/.dotfiles/aliases/alias.bash ]; then
+	. ~/.dotfiles/aliases/alias.bash
+fi
+
+if [ -f ~/.dotfiles/aliases/common ]; then
+	. ~/.dotfiles/aliases/common
 fi
 
 #############
 # FUNCTIONS
 ############
-if [ -f ~/.dotfiles/.functions ]; then
-	. ~/.dotfiles/.functions
+if [ -f ~/.dotfiles/functions/clean ]; then
+	. ~/.dotfiles/functions/clean
 fi
 
 #############
 # The prompt
 #############
-export PS1="${Red}\u: ${GreenBold}\w ${CyanBold}\`parse_git_branch\`${YellowBold}\`parse_git_status\`\[\033[00m\]$ "
+export PS1="\[\033[31m\]\u: \[\033[01;32m\]\w\[\033[00m\] $ "
 force_color_prompt=yes

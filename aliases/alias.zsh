@@ -1,5 +1,3 @@
-alias ls='ls -o'
-alias lsa='ls -Ao'
-# For real lazy times, also hides stuff
-alias l='ls -log'
-alias la='ls -Alog'
+alias makesym="bash ~/.dotfiles/setup/.makesym.sh"
+alias cdgit="cd ~/Public/Git"
+alias resource=". ~/.zshrc"

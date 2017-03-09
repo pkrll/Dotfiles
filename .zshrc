@@ -1,24 +1,47 @@
-setopt prompt_subst
+################
+# Z Shell Config
+#
+################
 
+setopt prompt_subst
+setopt shwordsplit
+
+################
+# COLORS
+################
+export CLICOLOR=1
+export LSCOLORS=exCxCxdxbxegedabagacad
+
+################
+# ALIASES
+################
 if [[ -f ~/.dotfiles/aliases/alias.zsh ]]; then
   source ~/.dotfiles/aliases/alias.zsh
 fi
 
+if [[ -f ~/.dotfiles/aliases/common ]]; then
+  source ~/.dotfiles/aliases/common
+fi
+
+################
+# FUNCTIONS AND
+# AUTOCOMPLETION
+################
 zstyle ':completion:*:*:git:*' script ~/.dotfiles/completion/.git-completion.zsh
+zstyle ':completion:*' special-dirs true # Fixes completion on ../
 fpath=(~/.dotfiles/completion ~/.dotfiles/functions $fpath)
 autoload -Uz clean compinit && compinit
 
-export CLICOLOR=1
-export LSCOLORS=exCxCxdxbxegedabagacad
+# Set PWD as terminal title
+# precmd () {print -Pn "\e]0;`PWD`\a"}
 
-if [[ $TERM_PROGRAM == "Apple_Terminal" ]]; then
+# For hyper term
+if [[ $TERM_PROGRAM == "Hyper" ]]; then
+  autoload -Uz promptinit; promptinit
+  prompt pure
+else
   autoload -U gitprompt
   PS1='%F{blue}at %B%~%b%f%F{white} $(gitprompt branch)
 %F{magenta}%B❯%b%F{white} '
   RPROMPT='$(gitprompt status)'
-fi
-
-if [[ $TERM_PROGRAM == "Hyper" ]]; then
-  autoload -U promptinit; promptinit
-  prompt pure
 fi
