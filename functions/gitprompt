@@ -21,12 +21,12 @@ git_status() {
     # Untracked
     if [[ -n `git ls-files -o --exclude-standard` ]]; then
       if [[ -n $GIT_PROMPT ]]; then
-        PROMPT="untracked, "
+        PROMPT="%F{green}%Buntracked%f%b, "
       else
-        PROMPT="untracked"
+        PROMPT="%F{green}%Buntracked%f%b"
       fi
 
-      GIT_PROMPT="%F{green}$PROMPT%f$GIT_PROMPT"
+      GIT_PROMPT="$PROMPT$GIT_PROMPT"
 
       unset $PROMPT
     fi
@@ -34,12 +34,12 @@ git_status() {
     # Deleted
     if git status &> /dev/null | grep -o "deleted" &> /dev/null; then
       if [[ -n $GIT_PROMPT ]]; then
-        PROMPT="deleted, "
+        PROMPT="%F{red}%Bdeleted%f%b, "
       else
-        PROMPT="deleted"
+        PROMPT="%F{red}%Bdeleted%f%b"
       fi
 
-      GIT_PROMPT="%F{red}$PROMPT%f$GIT_PROMPT"
+      GIT_PROMPT="$PROMPT$GIT_PROMPT"
 
       unset $PROMPT
     fi
@@ -48,12 +48,12 @@ git_status() {
     # Modified
     if ! git diff --quiet; then
       if [[ -n $GIT_PROMPT ]]; then
-        PROMPT="modified, "
+        PROMPT="%F{yellow}%Bmodified%f%b, "
       else
-        PROMPT="modified"
+        PROMPT="%F{yellow}%Bmodified%f%b"
       fi
 
-      GIT_PROMPT="%F{yellow}$PROMPT%f$GIT_PROMPT"
+      GIT_PROMPT="$PROMPT$GIT_PROMPT"
 
       unset $PROMPT
     fi
@@ -61,26 +61,27 @@ git_status() {
     # Staged
     if ! git diff --cached --quiet; then
       if [[ -n $GIT_PROMPT ]]; then
-        PROMPT="staged, "
+        PROMPT="%F{green}%Bstaged%f%b, "
       else
-        PROMPT="staged"
+        PROMPT="%F{green}%Bstaged%f%b"
       fi
 
-      GIT_PROMPT="%F{green}$PROMPT%f$GIT_PROMPT"
+      GIT_PROMPT="$PROMPT$GIT_PROMPT"
 
       unset $PROMPT
     fi
 
     # Ahead count
-    GIT_AHEAD=`git status -sb | grep -o '[0-9]'`
-    if [[ -n $GIT_AHEAD ]]; then
+    # GIT_AHEAD=`git status -sb | grep -o '[0-9]'`
+    GIT_AHEAD=`git rev-list --count @{u}..`
+    if [[ -n $GIT_AHEAD ]] && [[ ! $GIT_AHEAD -eq "0" ]]; then
       if [[ -n $GIT_PROMPT ]]; then
-        PROMPT="ahead by $GIT_AHEAD, "
+        PROMPT="%F{cyan}%Bahead by $GIT_AHEAD%f%b, "
       else
-        PROMPT="ahead by $GIT_AHEAD"
+        PROMPT="%F{cyan}%bahead by $GIT_AHEAD%f"
       fi
 
-      GIT_PROMPT="%F{cyan}$PROMPT%f$GIT_PROMPT"
+      GIT_PROMPT="$PROMPT$GIT_PROMPT"
 
       unset $PROMPT
     fi
