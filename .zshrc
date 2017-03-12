@@ -6,6 +6,10 @@
 setopt prompt_subst
 setopt shwordsplit
 
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
 ################
 # COLORS
 ################
@@ -33,7 +37,7 @@ fpath=(~/.dotfiles/completion ~/.dotfiles/functions $fpath)
 autoload -Uz clean compinit && compinit
 
 # Set PWD as terminal title
-# precmd () {print -Pn "\e]0;`PWD`\a"}
+precmd () {print -Pn "\e]0;\a\e]1;`PWD`\a"}
 
 autoload -U gitprompt
 RPROMPT='$(gitprompt status)'
