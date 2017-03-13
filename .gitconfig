@@ -18,5 +18,6 @@
 	co = checkout
 	st = status
 	ci = commit
+	up = remote update
 	unstage = reset HEAD --
 	last = log -1 HEAD
