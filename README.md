@@ -3,8 +3,29 @@ A total mess right now, and mainly for my own convenience, but if you want to us
 
 ### Installation
 ```shell
-> git clone https://github.com/pkrll/Dotfiles
-> mv Dotfiles .dotfiles
+❯ git clone https://github.com/pkrll/Dotfiles
+❯ mv Dotfiles .dotfiles
 ```
 
 Then run ``.makesym.sh`` in the ``setup`` folder. And that's it.
+
+### Update
+To update, just run the command:
+```shell
+❯ makesym
+--------------------------------
+Running makesym.sh...
+
+Retrieving latest changes from the repository
+
+Already up-to-date.
+--------------------------------
+
+...
+
+Done linking.
+
+Use the command resource to update
+your settings.
+--------------------------------
+```
