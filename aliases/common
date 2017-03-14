@@ -14,6 +14,10 @@ alias cdgit="cd ~/Public/Git"
 
 # For non-macos and terminals support --color arg
 if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  test -r ~/.dotfiles/.dircolors && eval "$(dircolors -b ~/.dotfiles/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls -o --color=auto'
+fi
+
+if [ -x /usr/local/bin/gpg2 ]; then
+   alias gpg=gpg2
 fi
