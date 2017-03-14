@@ -4,7 +4,16 @@ alias cl='clear'
 alias cdgit="cd ~/Public/Git"
 alias ls='ls -o'
 alias lsa='ls -Ao'
-# For real lazy times, also hides stuff
 alias l='ls -log'
 alias la='ls -Alog'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias update='git up'
+alias cdgit="cd ~/Public/Git"
+
+# For non-macos and terminals support --color arg
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls -o --color=auto'
+fi
