@@ -1,0 +1,12 @@
+REPONAME="`git remote get-url --push \`git remote\` 2> /dev/null | sed -e 's#.*/##' -e 's#.git##'`"
+
+if [[ ! -n $REPONAME ]]; then
+  echo `print -rD $PWD`
+else
+  if ! git_root_level; then
+    curdir=`basename \`pwd\``
+    REPONAME="${REPONAME}/${curdir}"
+  fi
+
+  echo $REPONAME
+fi

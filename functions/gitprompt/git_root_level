@@ -1,0 +1,8 @@
+
+TOPLEVEL=`git rev-parse --show-toplevel 2> /dev/null`
+
+if [[ `pwd` != $TOPLEVEL ]]; then
+  return 1
+else
+  return 0
+fi

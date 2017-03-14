@@ -3,29 +3,11 @@
 #
 #####################
 
-git_root_level() {
-  if [[ `pwd` == `git rev-parse --show-toplevel` ]]; then
-    return 0
-  else
-    return 1
-  fi
-}
-
-git_remote_name() {
-  echo "`git remote get-url --push \`git remote\` | sed -e 's#.*/##' -e 's#.git##'`"
-}
-
 git_branch() {
   BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 
   if [[ ! $BRANCH == "" ]]; then
-    REPONAME=`git_remote_name`
-    if ! git_root_level; then
-      curdir=`basename \`pwd\``
-      REPONAME="${REPONAME}/${curdir}"
-    fi
-
-    echo "${REPONAME} %F{yellow}on branch %B${BRANCH}%f%b%F{white}"
+    echo "%F{yellow}on branch %B${BRANCH}%f%b%F{white}"
   else
     echo ""
   fi
@@ -125,7 +107,7 @@ git_status() {
 }
 
 if [[ $1 == branch ]]; then
-  git_branch $2
+  git_branch
 fi
 
 if [[ $1 == status ]]; then

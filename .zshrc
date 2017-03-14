@@ -36,8 +36,8 @@ zstyle ':completion:*:*:git:*' script ~/.dotfiles/completion/.git-completion.zsh
 zstyle ':completion:*' special-dirs true # Fixes completion on ../
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**' # autocomplete on lowercase etc
-fpath=(~/.dotfiles/completion ~/.dotfiles/functions $fpath)
-autoload -Uz clean gitprompt compinit && compinit
+fpath=(~/.dotfiles/completion ~/.dotfiles/functions ~/.dotfiles/functions/gitprompt $fpath)
+autoload -Uz clean gitprompt git_remote_name git_root_level compinit && compinit
 
 if [[ -f ~/.dotfiles/functions/setprompt.zsh ]]; then
   source ~/.dotfiles/functions/setprompt.zsh
