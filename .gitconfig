@@ -11,7 +11,7 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg
+	program = gpg2
 [credential]
 	helper = osxkeychain
 [alias]

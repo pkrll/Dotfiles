@@ -1,7 +1,7 @@
 # Common aliases
 alias pi='ssh gitpi'
 alias cl='clear'
-alias cdgit="cd ~/Public/Git"
+alias bcd='cd $OLDPWD'
 alias ls='ls -o'
 alias lsa='ls -Ao'
 alias l='ls -log'
@@ -19,5 +19,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 if [ -x /usr/local/bin/gpg2 ]; then
-   alias gpg=gpg2
+  function gpg {
+    gpg2
+  }
 fi

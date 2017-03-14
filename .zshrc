@@ -35,6 +35,7 @@ fi
 zstyle ':completion:*:*:git:*' script ~/.dotfiles/completion/.git-completion.zsh
 zstyle ':completion:*' special-dirs true # Fixes completion on ../
 zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**' # autocomplete on lowercase etc
 fpath=(~/.dotfiles/completion ~/.dotfiles/functions $fpath)
 autoload -Uz clean compinit && compinit
 
