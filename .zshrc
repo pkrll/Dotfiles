@@ -1,5 +1,5 @@
 ################
-# Z Shell Config
+# ZSH Config
 #
 ################
 
@@ -37,30 +37,30 @@ zstyle ':completion:*' special-dirs true # Fixes completion on ../
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**' # autocomplete on lowercase etc
 fpath=(~/.dotfiles/completion ~/.dotfiles/functions $fpath)
-autoload -Uz clean compinit && compinit
+autoload -Uz clean gitprompt compinit && compinit
 
-autoload -U gitprompt
-RPROMPT='$(gitprompt status)'
+if [[ -f ~/.dotfiles/functions/setprompt.zsh ]]; then
+  source ~/.dotfiles/functions/setprompt.zsh
+fi
 
 # Different terminal cases
 if [[ $TERM_PROGRAM == "Hyper" ]]; then
   autoload -Uz promptinit; promptinit
   prompt pure
 else
+  TITLE="\e]0;Terminal: `pwd`\a"
   if [[ $TERM_PROGRAM == "Apple_Terminal" ]]; then
     # When on MacOS
-    TITLE="\e]1;`PWD`\a"
+    TITLE="\e]0;\a\e]1;`pwd`\a"
   else
     if [[ -n $SSH_CONNECTION ]]; then
       IPADR=$SSH_CONNECTION[(ws: :)3]
-      TITLE="\e]1;${USER}@${IPADR}\a"
-    else
-      TITLE="\e]1;Terminal\a"
+      TITLE="\e]0;${USER}@${IPADR}: `pwd`\a"
     fi
   fi
 
-  TITLE="\e]0;\a${TITLE}"
-  precmd () {print -Pn $TITLE}
-  PS1='%F{blue}at %B%~%b%f%F{white} $(gitprompt branch)
-%F{magenta}%B❯%b%F{white} '
+  precmd () {
+    print -Pn $TITLE
+    setprompt
+  }
 fi

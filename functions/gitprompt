@@ -3,11 +3,29 @@
 #
 #####################
 
+git_root_level() {
+  if [[ `pwd` == `git rev-parse --show-toplevel` ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+git_remote_name() {
+  echo "`git remote get-url --push \`git remote\` | sed -e 's#.*/##' -e 's#.git##'`"
+}
+
 git_branch() {
   BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 
   if [[ ! $BRANCH == "" ]]; then
-    echo "%F{yellow}on branch %B${BRANCH}%f%b%F{white}"
+    REPONAME=`git_remote_name`
+    if ! git_root_level; then
+      curdir=`basename \`pwd\``
+      REPONAME="${REPONAME}/${curdir}"
+    fi
+
+    echo "${REPONAME} %F{yellow}on branch %B${BRANCH}%f%b%F{white}"
   else
     echo ""
   fi
@@ -15,103 +33,99 @@ git_branch() {
 
 git_status() {
   GIT_PROMPT=""
+  # Ahead/behind count
+  # GIT_AHEAD=`git status -sb | grep -o '[0-9]'`
+  GIT_COUNT=`git rev-list --count --left-right @{u}...`
+  if [[ -n $GIT_COUNT ]]; then
+    BEHIND=${${(z)GIT_COUNT}[1]}
+    AHEAD=${${(z)GIT_COUNT}[2]}
 
-  if [[ -n `git_branch` ]]; then
-
-    # Ahead/behind count
-    # GIT_AHEAD=`git status -sb | grep -o '[0-9]'`
-    GIT_COUNT=`git rev-list --count --left-right @{u}...`
-    if [[ -n $GIT_COUNT ]]; then
-      BEHIND=${${(z)GIT_COUNT}[1]}
-      AHEAD=${${(z)GIT_COUNT}[2]}
-
-      if [[ ! AHEAD -eq 0 ]]; then
-        if [[ -n $GIT_PROMPT ]]; then
-          PROMPT=", %F{cyan}%Bahead by $AHEAD%f%b"
-        else
-          PROMPT="%F{cyan}%BAhead by $AHEAD%f%b"
-        fi
-
-        GIT_PROMPT="$GIT_PROMPT$PROMPT"
-      fi
-
-      if [[ ! BEHIND -eq 0 ]]; then
-        if [[ -n $GIT_PROMPT ]]; then
-          PROMPT=", %F{magenta}%Bbehind by $BEHIND%f%b"
-        else
-          PROMPT="%F{magenta}%BBehind by $BEHIND%f%b"
-        fi
-
-        GIT_PROMPT="$GIT_PROMPT$PROMPT"
-      fi
-
-      unset $PROMPT
-      unset $BEHIND
-      unset $AHEAD
-    fi
-
-    # Untracked
-    if [[ -n `git ls-files -o --exclude-standard` ]]; then
+    if [[ ! AHEAD -eq 0 ]]; then
       if [[ -n $GIT_PROMPT ]]; then
-        PROMPT=", %F{green}%Buntracked%f%b"
+        PROMPT=", %F{cyan}%Bahead by $AHEAD%f%b"
       else
-        PROMPT="%F{green}%BUntracked%f%b"
+        PROMPT="%F{cyan}%BAhead by $AHEAD%f%b"
       fi
 
       GIT_PROMPT="$GIT_PROMPT$PROMPT"
-
-      unset $PROMPT
     fi
 
-    # Deleted
-    if git status &> /dev/null | grep -o "deleted" &> /dev/null; then
+    if [[ ! BEHIND -eq 0 ]]; then
       if [[ -n $GIT_PROMPT ]]; then
-        PROMPT=", %F{red}%Bdeleted%f%b"
+        PROMPT=", %F{magenta}%Bbehind by $BEHIND%f%b"
       else
-        PROMPT="%F{red}%BDeleted%f%b"
+        PROMPT="%F{magenta}%BBehind by $BEHIND%f%b"
       fi
 
       GIT_PROMPT="$GIT_PROMPT$PROMPT"
-
-      unset $PROMPT
     fi
 
-    # Modified
-    if ! git diff --quiet; then
-      if [[ -n $GIT_PROMPT ]]; then
-        PROMPT=", %F{yellow}%Bmodified%f%b"
-      else
-        PROMPT="%F{yellow}%BModified%f%b"
-      fi
+    unset $PROMPT
+    unset $BEHIND
+    unset $AHEAD
+  fi
 
-      GIT_PROMPT="$GIT_PROMPT$PROMPT"
-
-      unset $PROMPT
-    fi
-
-    # Staged
-    if ! git diff --cached --quiet; then
-      if [[ -n $GIT_PROMPT ]]; then
-        PROMPT=", %F{green}%Bstaged%f%b"
-      else
-        PROMPT="%F{green}%BStaged%f%b"
-      fi
-
-      GIT_PROMPT="${GIT_PROMPT}${PROMPT}"
-
-      unset $PROMPT
-    fi
-
+  # Untracked
+  if [[ -n `git ls-files -o --exclude-standard` ]]; then
     if [[ -n $GIT_PROMPT ]]; then
-      echo "%F{cyan}(${GIT_PROMPT}%F{cyan})%f"
+      PROMPT=", %F{green}%Buntracked%f%b"
     else
-      echo "%F{cyan}(%F{green}%BUp-to-date%b%F{cyan})%f"
+      PROMPT="%F{green}%BUntracked%f%b"
     fi
+
+    GIT_PROMPT="$GIT_PROMPT$PROMPT"
+
+    unset $PROMPT
+  fi
+
+  # Deleted
+  if git status &> /dev/null | grep -o "deleted" &> /dev/null; then
+    if [[ -n $GIT_PROMPT ]]; then
+      PROMPT=", %F{red}%Bdeleted%f%b"
+    else
+      PROMPT="%F{red}%BDeleted%f%b"
+    fi
+
+    GIT_PROMPT="$GIT_PROMPT$PROMPT"
+
+    unset $PROMPT
+  fi
+
+  # Modified
+  if ! git diff --quiet; then
+    if [[ -n $GIT_PROMPT ]]; then
+      PROMPT=", %F{yellow}%Bmodified%f%b"
+    else
+      PROMPT="%F{yellow}%BModified%f%b"
+    fi
+
+    GIT_PROMPT="$GIT_PROMPT$PROMPT"
+
+    unset $PROMPT
+  fi
+
+  # Staged
+  if ! git diff --cached --quiet; then
+    if [[ -n $GIT_PROMPT ]]; then
+      PROMPT=", %F{green}%Bstaged%f%b"
+    else
+      PROMPT="%F{green}%BStaged%f%b"
+    fi
+
+    GIT_PROMPT="${GIT_PROMPT}${PROMPT}"
+
+    unset $PROMPT
+  fi
+
+  if [[ -n $GIT_PROMPT ]]; then
+    echo "%F{cyan}(${GIT_PROMPT}%F{cyan})%f"
+  else
+    echo "%F{cyan}(%F{green}%BUp-to-date%b%F{cyan})%f"
   fi
 }
 
 if [[ $1 == branch ]]; then
-  git_branch
+  git_branch $2
 fi
 
 if [[ $1 == status ]]; then
