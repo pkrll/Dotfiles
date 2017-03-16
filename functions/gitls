@@ -1,0 +1,110 @@
+local ls=`/bin/ls`
+# TODO: Rewrite git_Status to fit both gitprompt and gitls
+# Coloring is the issue...
+
+git_status() {
+  GIT_PROMPT=""
+  # Ahead/behind count
+  # GIT_AHEAD=`git status -sb | grep -o '[0-9]'`
+  GIT_COUNT=`git rev-list --count --left-right @{u}...`
+  if [[ -n $GIT_COUNT ]]; then
+    BEHIND=${${(z)GIT_COUNT}[1]}
+    AHEAD=${${(z)GIT_COUNT}[2]}
+
+    if [[ ! AHEAD -eq 0 ]]; then
+      if [[ -n $GIT_PROMPT ]]; then
+        PROMPT=", \033[0;36m%Bahead by $AHEAD\033[m"
+      else
+        PROMPT="\033[0;36m%BAhead by $AHEAD\033[m"
+      fi
+
+      GIT_PROMPT="$GIT_PROMPT$PROMPT"
+    fi
+
+    if [[ ! BEHIND -eq 0 ]]; then
+      if [[ -n $GIT_PROMPT ]]; then
+        PROMPT=", \033[1;35mbehind by $BEHIND\033[m"
+      else
+        PROMPT="\033[1;35mBehind by $BEHIND\033[m"
+      fi
+
+      GIT_PROMPT="$GIT_PROMPT$PROMPT"
+    fi
+
+    unset $PROMPT
+    unset $BEHIND
+    unset $AHEAD
+  fi
+
+  # Untracked
+  if [[ -n `git ls-files -o --exclude-standard` ]]; then
+    if [[ -n $GIT_PROMPT ]]; then
+      PROMPT=", \033[1;32muntracked\033[m"
+    else
+      PROMPT="\033[1;32mUntracked\033[m"
+    fi
+
+    GIT_PROMPT="$GIT_PROMPT$PROMPT"
+
+    unset $PROMPT
+  fi
+
+  # Deleted
+  if git status &> /dev/null | grep -o "deleted" &> /dev/null; then
+    if [[ -n $GIT_PROMPT ]]; then
+      PROMPT=", \033[1;31mdeleted%f%b"
+    else
+      PROMPT="\033[1;31mDeleted%f%b"
+    fi
+
+    GIT_PROMPT="$GIT_PROMPT$PROMPT"
+
+    unset $PROMPT
+  fi
+
+  # Modified
+  if ! git diff --quiet; then
+    if [[ -n $GIT_PROMPT ]]; then
+      PROMPT=", \033[1;33mmodified\033[m"
+    else
+      PROMPT="\033[1;33mModified\033[m"
+    fi
+
+    GIT_PROMPT="$GIT_PROMPT$PROMPT"
+
+    unset $PROMPT
+  fi
+
+  # Staged
+  if ! git diff --cached --quiet; then
+    if [[ -n $GIT_PROMPT ]]; then
+      PROMPT=", \033[1;32mstaged\033[0m"
+    else
+      PROMPT="\033[1;32mStaged\033[0m"
+    fi
+
+    GIT_PROMPT="${GIT_PROMPT}${PROMPT}"
+
+    unset $PROMPT
+  fi
+
+  if [[ -n $GIT_PROMPT ]]; then
+    echo "\033[0;36m(${GIT_PROMPT}\033[0;36m)\033[0m"
+  else
+    echo "\033[0;36m(\033[1;32mUp-to-date\033[0m\033[0;36m)\033[0m"
+  fi
+}
+STATUS=""
+for FOLDER in $(ls -1); do
+  cd $FOLDER
+  files=`ls | wc -l | tr -d ' '`
+  STATUS=`git_status 2> /dev/null`
+  if [[ -n $STATUS ]]; then
+    echo "Git repository found at $FOLDER $STATUS \n -> Contains $files files."
+  fi
+  cd ..
+done
+
+if [[ ! -n $STATUS ]]; then
+  echo "No git repositories found."
+fi
