@@ -1,0 +1,9 @@
+#compdef lsgit
+
+typeset -A opt_args
+local context state line
+
+_arguments -s -S "-a[show hidden files]" \
+                 "-f[show file count]" \
+                 "-u[update remote before listing]" \
+                 && return 0

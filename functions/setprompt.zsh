@@ -2,14 +2,14 @@
 
 function setprompt() {
   if [[ -x /usr/bin/git ]]; then
-    GITPROMPT="$(git_prompt branch)"
+    GITPROMPT="$(git_branch)"
 
     if [[ ! -n $GITPROMPT ]]; then
       GITPROMPT="%B%~%b%f%F{white}"
       STSPROMPT=""
     else
       GITPROMPT="%B$(git_remote_name)%b%f%F{white} ${GITPROMPT}"
-      STSPROMPT="$(git_prompt status)"
+      STSPROMPT="$(git_status)"
     fi
   fi
 

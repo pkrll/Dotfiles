@@ -1,0 +1,13 @@
+# Git branch
+#
+# Display the current branch
+
+git_branch() {
+  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+
+  if [[ ! $BRANCH == "" ]]; then
+    echo "%F{yellow}on branch %B${BRANCH}%f%b%F{white}"
+  else
+    echo ""
+  fi
+}

@@ -1,17 +1,6 @@
-#####################
-# Git Prompt for ZSH
+# Git status
 #
-#####################
-
-git_branch() {
-  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-
-  if [[ ! $BRANCH == "" ]]; then
-    echo "%F{yellow}on branch %B${BRANCH}%f%b%F{white}"
-  else
-    echo ""
-  fi
-}
+# Display the current status
 
 git_status() {
   GIT_PROMPT=""
@@ -105,11 +94,3 @@ git_status() {
     echo "%F{cyan}(%F{green}%BUp-to-date%b%F{cyan})%f"
   fi
 }
-
-if [[ $1 == branch ]]; then
-  git_branch
-fi
-
-if [[ $1 == status ]]; then
-  git_status
-fi
