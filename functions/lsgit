@@ -1,20 +1,14 @@
 # Git listing
+#
+# Show the status of git repositories
+
 local -a options
 local lsoptions=""
 local repostatus=""
-# Using getopt to parse the arguments
-# allows for multiple commands in same argument
-set -- `getopt afu "$@" 2> /dev/null`
 
-while [ $# -gt 0 ]; do
-  case "$1" in
-    -a) lsoptions="-a" ;;
-    -f) options+=( f ) ;;
-    -u) options+=( u ) ;;
-    --) break;;
-  esac
-  shift
-done
+##################
+# Helper functions
+##################
 
 function _isFolder() {
   if [[ -d $1 && $1 != ".." && $1 != "." ]]; then
@@ -32,8 +26,25 @@ function _optionIsSet() {
   fi
 }
 
-for folder in $(/bin/ls $lsoptions); do
+##################
+# Main
+##################
 
+# Using getopt to parse the arguments
+# allows for multiple commands in same argument
+set -- `getopt afu "$@" 2> /dev/null`
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -a) lsoptions="-a" ;;
+    -f) options+=( f ) ;;
+    -u) options+=( u ) ;;
+    --) break;;
+  esac
+  shift
+done
+
+for folder in $(/bin/ls $lsoptions); do
   if $(_isFolder $folder); then
     cd $folder
     if [[ -n $(git_branch) ]]; then
@@ -44,7 +55,7 @@ for folder in $(/bin/ls $lsoptions); do
         fi
 
         if $(_optionIsSet f); then
-          local files="\n %F{white}-> Contains $(ls -1 | wc -l | tr -d ' ') files.%f"
+          local files="\n %F{white}-> Contains $(/bin/ls -1 | wc -l | tr -d ' ') files.%f"
         fi
 
         print -P "%F{white}Git repository found at $folder $repostatus $files%f"
