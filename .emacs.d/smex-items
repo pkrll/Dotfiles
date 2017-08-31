@@ -1,0 +1,28 @@
+
+;; ----- smex-history -----
+(
+ make-directory
+ shell
+ term
+ load-theme
+ linum-mode
+ line-number-mode
+ auto-complete-mode
+)
+
+;; ----- smex-data -----
+(
+ (ns-toggle-toolbar . 3)
+ (customize-face . 1)
+ (package-install . 8)
+ (load-theme . 3)
+ (package-refresh-contents . 1)
+ (shell . 4)
+ (package-list-packages . 1)
+ (make-directory . 2)
+ (auto-complete . 2)
+ (auto-complete-mode . 1)
+ (line-number-mode . 2)
+ (linum-mode . 2)
+ (term . 1)
+)
