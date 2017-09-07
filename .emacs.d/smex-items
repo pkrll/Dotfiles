@@ -1,29 +1,33 @@
 
 ;; ----- smex-history -----
 (
- load-theme
- package-install
+ load-file
+ ggtags-mode
  package-delete
+ package-install
  package-refresh-contents
- make-directory
- shell
- term
+ load-theme
+ company-mode
 )
 
 ;; ----- smex-data -----
 (
- (ns-toggle-toolbar . 3)
- (customize-face . 1)
- (package-install . 13)
- (load-theme . 20)
- (package-refresh-contents . 2)
- (shell . 4)
- (package-list-packages . 1)
- (make-directory . 2)
- (auto-complete . 2)
- (auto-complete-mode . 1)
- (line-number-mode . 2)
- (linum-mode . 2)
- (term . 1)
+ (package-install . 12)
+ (ggtags-mode . 6)
+ (ggtags-create-tags . 1)
+ (ggtags-view-search-history . 1)
+ (package-refresh-contents . 4)
+ (load-theme . 8)
+ (company-mode . 1)
+ (company-complete . 1)
+ (customize-variable . 1)
+ (magit-version . 1)
+ (magit-status . 1)
+ (vc-mode-line . 1)
+ (load-file . 385)
+ (sml/setup . 2)
+ (sml/customize . 1)
+ (sml/customize-faces . 1)
+ (sml/apply-theme . 1)
  (package-delete . 1)
 )

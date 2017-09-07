@@ -2,80 +2,43 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/forelasningar/f01/extra/" . "arrayer/")
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/forelasningar/" . "f01/")
- ("/Users/ardalansamimi/" . ".emacs.d/")
- ("/Users/" . "ardalansamimi/")
- ("/" . "Users/")
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/" . "labbar/")
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/" . "lab4/")
+ ("/Users/ardalansamimi/.dotfiles/.emacs.d/ioopm-packages/" . "expand-region/")
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/" . "lab5/")
  ("/Users/ardalansamimi/Documents/Skola/" . "IOOPM/")
  ("/Users/ardalansamimi/Documents/" . "Skola/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
- "/Users/ardalansamimi/Documents/Skola/IOOPM/lab4/"
- "/Users/ardalansamimi/.emacs.d/"
- "/Users/ardalansamimi/Documents/Skola/IOOPM/lab3/"
- "/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/labbar/"
- "/Users/ardalansamimi/Documents/Skola/IOOPM/"
- "/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/forelasningar/f01/"
- "/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/forelasningar/f01/extra/arrayer/"
- "/Users/ardalansamimi/Documents/Skola/IOOPM/lab1/"
- "/Users/ardalansamimi/Documents/Skola/IOOPM/lab2/"
- "/Users/ardalansamimi/.dotfiles/aliases/"
+ "/Users/ardalansamimi/.dotfiles/.emacs.d/"
+ "/Users/ardalansamimi/.dotfiles/.emacs.d/ioopm-packages/expand-region/"
+ "/Users/ardalansamimi/Documents/Skola/IOOPM/lab5/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "tests.c"
- "utils.c"
  "init.el"
- "p1.c"
- "guess.c"
- "utils.h"
- "trim.c"
- "swap.c"
- "lab4.md"
- "test.c"
+ "erlang-mode-expansions.el"
+ "db.c"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/lab4/" (22951 50633 0 0) "utils.h" "utils.c~" "utils.c" "tests.c" "p1.c~" "p1.c" "a.out" ".#p1.c" "#p1.c#" "../" "./")
+ ("/Users/ardalansamimi/.dotfiles/.emacs.d/ioopm-packages/expand-region/" (22961 27686 0 0) "web-mode-expansions.elc" "web-mode-expansions.el" "the-org-mode-expansions.elc" "the-org-mode-expansions.el" "text-mode-expansions.elc" "text-mode-expansions.el" "subword-mode-expansions.elc" "subword-mode-expansions.el" "sml-mode-expansions.elc" "sml-mode-expansions.el" "ruby-mode-expansions.elc" "ruby-mode-expansions.el" "python-mode-expansions.elc" "python-mode-expansions.el" "python-el-fgallina-expansions.elc" "python-el-fgallina-expansions.el" "python-el-expansions.elc" "python-el-expansions.el" "octave-expansions.elc" "octave-expansions.el" "nxml-mode-expansions.elc" "nxml-mode-expansions.el" "latex-mode-expansions.elc" "latex-mode-expansions.el" "jsp-expansions.elc" "jsp-expansions.el" "js2-mode-expansions.elc" "js2-mode-expansions.el" "js-mode-expansions.elc" "js-mode-expansions.el" "html-mode-expansions.elc" "html-mode-expansions.el" "feature-mode-expansions.elc" "feature-mode-expansions.el" "expand-region.elc" "expand-region.el" "expand-region-pkg.el" "expand-region-custom.elc" "expand-region-custom.el" "expand-region-core.elc" "expand-region-core.el" "expand-region-autoloads.el~" "expand-region-autoloads.el" "erlang-mode-expansions.elc" "erlang-mode-expansions.el" "er-basic-expansions.elc" "er-basic-expansions.el" "enh-ruby-mode-expansions.elc" "enh-ruby-mode-expansions.el" "css-mode-expansions.elc" "css-mode-expansions.el" "cperl-mode-expansions.elc" "cperl-mode-expansions.el" "clojure-mode-expansions.elc" "clojure-mode-expansions.el" "cc-mode-expansions.elc" "cc-mode-expansions.el" "../" "./")
 
- ("/Users/ardalansamimi/.emacs.d/" (22951 49648 0 0) "snippets/" "smex-items" "recentf~" "recentf" "ioopm-packages/" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" "#init.el#" "../" "./")
+ ("/Users/ardalansamimi/.dotfiles/.emacs.d/ioopm-packages/" (22468 11861 0 0) "yasnippet/" "visual-regexp/" "smex/" "seq/" "multiple-cursors/" "imenu-anywhere/" "flycheck/" "expand-region/" "dash/" "avy/" "ace-window/" "ace-jump-mode/" "../" "./")
 
- ("/Users/ardalansamimi/" (22951 49726 0 0) "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" ".zshrc" ".zsh_history" ".zcompdump" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".subversion/" ".ssh/" ".oracle_jre_usage/" ".kite/" ".inputrc" ".gnupg/" ".gitconfig" ".ghc/" ".ftpconfig" ".emacs.d/" ".DS_Store" ".dropbox/" ".dotfiles_backup/" ".dotfiles/" ".config/" ".cocoapods/" ".CFUserTextEncoding" ".cabal/" ".bashrc" ".bash_sessions/" ".bash_profile" ".bash_history" ".atom/" "../" "./")
+ ("/Users/ardalansamimi/.dotfiles/.emacs.d/" (22961 27661 0 0) "snippets/" "smex-items" "recentf~" "recentf" "ioopm-packages/" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "../" "./")
 
- ("/Users/ardalansamimi/Documents/" (22951 48997 0 0) "Skola/" "SimCity 4/" "Powersaves For AMIIBO/" "HT2016-application.pdf" "dazzlebox-project-report.pdf" "champs.cvs.csv" "BackerGuiltCertificate.pdf" ".test" ".localized" ".DS_Store" "../" "./")
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/lab5/" (22961 13472 0 0) "utils.h~" "utils.h" "utils.c~" "utils.c" "test.txt" "passthrough.c~" "passthrough.c" "GTAGS" "GRTAGS" "GPATH" "db.c~" "db.c" "cp.c~" "cp.c" "cat.c~" "cat.c" "a.out" "../" "./")
 
- ("/Users/ardalansamimi/Documents/Skola/" (22951 48997 0 0) "Logik och Bevisteknik/" "IOOPM/" "Introduction to Computer Architecture/" "Årskurs 1/" ".DS_Store" "../" "./")
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/" (22961 4691 0 0) "Planering/" "lab5/" "lab4/" "lab3/" "lab2/" "lab1/" "ioopm17/" "Ardalan.Samimisadeh.1548/" ".DS_Store" "../" "./")
 
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/" (22951 49657 0 0) "test.c" "lab4/" "lab3/" "lab2/" "lab1/" "ioopm17/" "../" "./")
+ ("/Users/ardalansamimi/Documents/Skola/" (22957 25354 0 0) "IOOPM/" "Årskurs 1/" "Automatateori/" ".DS_Store" "../" "./")
 
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/lab3/" (22951 49020 0 0) "utils.h" "utils.c" "trim.c" "str.c" "recursion.c" "p1.c" "guess.c" "experiment.c" "a.out" "../" "./")
+ ("/Users/ardalansamimi/Documents/" (22941 28695 0 0) "Skola/" "SimCity 4/" "Powersaves For AMIIBO/" "Microsoft User Data/" "HT2016-application.pdf" "dazzlebox-project-report.pdf" "champs.cvs.csv" "BackerGuiltCertificate.pdf" ".test" ".localized" ".DS_Store" "../" "./")
 
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/labbar/" (22950 32891 0 0) "README.md" "lab5.md" "lab4.md" "lab3.md" "lab2.md" "lab1.md" "#lab3.md#" "../" "./")
-
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/forelasningar/f01/" (22950 34724 0 0) "swedish.c" "strdup.c" "README.md" "password_fixed.c" "password.c" "password-good.c" "password-bad.c" "overview.png" "nfak.c" "megaphone_fixed.c" "megaphone.c" "length_fixed.c" "length.c" "greeting_fixed.c" "greeting.c" "F1.pdf" "extra/" "data-type-sizes.c" "cl-args.c" "ascii.c" "a.out" "../" "./")
-
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/forelasningar/f01/extra/arrayer/" (22949 23854 0 0) "rooms.c" "README.md" "../" "./")
-
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/forelasningar/f01/extra/" (22949 23854 0 0) "strings/" "rekursion/" "kompilera/" "io/" "debuggning/" "arrayer/" "../" "./")
-
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/forelasningar/" (22949 23854 0 0) "README.md" "f12/" "f11/" "f09/" "f08/" "f07/" "f06/" "f05/" "f04/" "f03/" "f02/" "f01/" "../" "./")
-
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/lab1/" (22948 7851 0 0) "temp.c~" "temp.c" "p8.c~" "p8.c" "p7.c~" "p7.c" "p6.c~" "p6.c" "p5.c~" "p5.c" "p4.c~" "p4.c" "p3.c~" "p3.c" "p2.c~" "p2.c" "p1.c~" "p1.c" "hello.c~" "hello.c" "a.out" "../" "./")
-
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/lab2/" (22949 42527 0 0) "utils.o" "utils.h~" "utils.h" "utils.c~" "utils.c" "guess.c~" "guess.c" "fizzbuzz.c~" "fizzbuzz.c" "a.out" "../" "./")
-
- ("/Users/" (22500 7710 0 0) "Shared/" "Guest/" "ardalansamimi/" ".localized" "../" "./")
-
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/" (22949 23854 0 0) "uppgifter/" "README.md" "labbar/" "forelasningar/" "extramaterial/" ".gitignore" ".git/" "../" "./")
-
- ("/Users/ardalansamimi/.dotfiles/aliases/" (22948 32353 0 0) "common" "alias.zsh" "alias.bash" "../" "./")
+ ("/Users/ardalansamimi/" (22961 24475 0 0) "Sites/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".zshrc" ".zsh_history" ".zcompdump" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".subversion/" ".stack/" ".ssh/" ".python-eggs/" ".putty/" ".prefs/" ".oracle_jre_usage/" ".npmrc" ".npm/" ".netrc" ".lesshst" ".itmstransporter/" ".inputrc" ".hyper_plugins/" ".hyper.js" ".gnupg/" ".gitconfig" ".ghc/" ".gem/" ".emacs.d/" ".DS_Store" ".dropbox/" ".dotfiles_backup/" ".dotfiles/" ".config/" ".composer/" ".cocoapods/" ".CFUserTextEncoding" ".cache/" ".cabal/" ".bundle/" ".bashrc" ".bash_sessions/" ".bash_profile" ".bash_history" ".atom/" "../" "./")
 )
 
 ;; ----- ido-unc-hosts-cache -----
