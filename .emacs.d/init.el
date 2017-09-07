@@ -20,32 +20,36 @@
 ;; shortcut you don't like, you can (and should!) always change it to
 ;; something that you do like.
 
+;; This must be here, otherwise emacs will bug me about the theme
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" default)))
+ '(package-selected-packages
+   (quote
+    (dracula-theme sr-speedbar with-editor rich-minority ggtags dash company-irony)))
+ '(speedbar-default-position (quote left)))
+
+
 ;; ===========
 ;; Appearance
 ;; ===========
-
-;; Mode line
-;; https://emacs.stackexchange.com/questions/5529/can-i-align-items-in-the-modeline-to-the-right
-;; Code:
-(defun simple-mode-line-render (left right)
-  "Return a string of `window-width' length containing LEFT, and RIGHT aligned respectively."
-  (let* ((available-width (- (window-width) (length left) 8)))
-    (format (format "%%s %%%ds" available-width) left right )
-  ))
 
 (setq-default mode-line-buffer-identification
               '(:eval (abbreviate-file-name default-directory)))
 
 (setq-default mode-line-format
-              '((:eval (propertize (substring vc-mode 1) 'face '(:background "black" :foreground "red")))
-                " ❯%d "
+              '(
+                (:eval (propertize " ❯ " 'face '(:foreground "white" :weight: normal)))
                 mode-line-buffer-identification
-                "%b [%*] "
+                (:eval (propertize "%b" 'face '(:foreground "#6FADC0" :weight bold)))
+                " [%*] "
+                (:eval (concat "[" (concat (propertize (substring vc-mode 1) 'face '(:foreground "#C06F98" :weight bold)) "] " )))
                 "(Line: %l, Col: %c)"
-                ;;(:eval (simple-mode-line-render
-                ;;        (format-mode-line "❯ %b [%*]")
-                ;;        (format-mode-line "Line: %l, Col: %c")
-                ;;        ))
                 ))
 ;; Disable the menu bar
 
@@ -96,6 +100,7 @@
 ;;(if display-graphic-p
 ;;    (progn
 ;;      (load-theme 'wombat)))
+(load-theme 'dracula)
 
 ;; =====
 ;; PATH
@@ -183,7 +188,7 @@
 ;; Ace window
 ;; Select which window to switch to, rather than shuffling through them all
 (require 'ace-window)
-;(global-set-key (kbd "C-x o") 'ace-window)
+(global-set-key (kbd "C-x o") 'ace-window)
 
 
 ;; imenu
@@ -347,21 +352,12 @@
                              'previous-error))))
 
 ;; Display flymake errors in minibuffer
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" default)))
- '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
- '(help-at-pt-timer-delay 0.2)
- '(magit-commit-arguments (quote ("--gpg-sign=D452235087A2F031")))
- '(package-selected-packages (quote (dracula-theme company ggtags))))
 
 ;; YASnippets
 ;; Expand e.g. "for<tab>" to "for(int i = 0; i < N; i++) {}"
+(setq yas-snippet-dirs '(
+                         "~/.emacs.d/snippets"
+                         "~/.emacs.d/ioopm-packages/yasnippet/snippets"))
 (require 'yasnippet)
 (yas-global-mode 1)
 
@@ -379,6 +375,13 @@
 (define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
 (define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
 (define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
+
+;; speedbar
+(setq speedbar-show-unknown-files t)
+(global-set-key "\M-s\M-s" 'sr-speedbar-toggle)
+
+;; terminal
+(global-set-key (kbd "M-s-t") 'shell)
 
 
 (custom-set-faces

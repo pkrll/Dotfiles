@@ -2,32 +2,41 @@
 ;; ----- smex-history -----
 (
  load-file
- ggtags-mode
- package-delete
- package-install
- package-refresh-contents
+ sr-speedbar-open
+ sr-speedbar-toggle
+ speedbar-frame-mode
+ highlight-phrase
  load-theme
- company-mode
+ package-install
 )
 
 ;; ----- smex-data -----
 (
- (package-install . 12)
+ (package-install . 19)
  (ggtags-mode . 6)
  (ggtags-create-tags . 1)
  (ggtags-view-search-history . 1)
- (package-refresh-contents . 4)
- (load-theme . 8)
+ (package-refresh-contents . 8)
+ (load-theme . 25)
  (company-mode . 1)
  (company-complete . 1)
  (customize-variable . 1)
  (magit-version . 1)
  (magit-status . 1)
  (vc-mode-line . 1)
- (load-file . 385)
+ (load-file . 453)
  (sml/setup . 2)
  (sml/customize . 1)
  (sml/customize-faces . 1)
  (sml/apply-theme . 1)
- (package-delete . 1)
+ (package-delete . 7)
+ (speedbar . 1)
+ (eval-expression . 1)
+ (customize-themes . 4)
+ (yas-new-snippet . 2)
+ (yas-reload-all . 3)
+ (speedbar-frame-mode . 3)
+ (sr-speedbar-open . 4)
+ (highlight-phrase . 1)
+ (sr-speedbar-toggle . 1)
 )
