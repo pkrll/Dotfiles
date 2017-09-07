@@ -24,6 +24,29 @@
 ;; Appearance
 ;; ===========
 
+;; Mode line
+;; https://emacs.stackexchange.com/questions/5529/can-i-align-items-in-the-modeline-to-the-right
+;; Code:
+(defun simple-mode-line-render (left right)
+  "Return a string of `window-width' length containing LEFT, and RIGHT aligned respectively."
+  (let* ((available-width (- (window-width) (length left) 8)))
+    (format (format "%%s %%%ds" available-width) left right )
+  ))
+
+(setq-default mode-line-buffer-identification
+              '(:eval (abbreviate-file-name default-directory)))
+
+(setq-default mode-line-format
+              '((:eval (propertize (substring vc-mode 1) 'face '(:background "black" :foreground "red")))
+                " ❯%d "
+                mode-line-buffer-identification
+                "%b [%*] "
+                "(Line: %l, Col: %c)"
+                ;;(:eval (simple-mode-line-render
+                ;;        (format-mode-line "❯ %b [%*]")
+                ;;        (format-mode-line "Line: %l, Col: %c")
+                ;;        ))
+                ))
 ;; Disable the menu bar
 
 ;; Added by Package.el.  This must come before configurations of
@@ -70,9 +93,9 @@
 ;; than just the three above. For a list of all available themes,
 ;; press "M-x customize-themes <RET>". You can also use a theme in
 ;; combination with the above set-color-commands.
-;(if display-graphic-p
-;    (progn
-;      (load-theme 'wombat)))
+;;(if display-graphic-p
+;;    (progn
+;;      (load-theme 'wombat)))
 
 ;; =====
 ;; PATH
@@ -89,8 +112,7 @@
 
 (setq extra-path
       (concat ":/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-              ":/opt/local/bin:/usr/texbin:/Users/Elias/shortcuts"
-              ":/Users/Elias/Library/Haskell/bin:/Users/Elias/.cabal/bin"))
+              ":/opt/local/bin:"))
 
 (defun set-exec-path-from-shell-PATH ()
   "Sets the exec-path to the same value used by the user shell"
@@ -131,7 +153,10 @@
 (show-paren-mode t)
 
 ;; Show line numbers to the left of all buffers
-; (global-linum-mode t)
+(global-linum-mode t)
+
+;; Add padding to line numbers
+(setq linum-format "%d ")
 
 ;; Sentences are not followed by two spaces
 ;; Makes navigating with M-e and M-a (forward/backward senctence)
@@ -202,11 +227,11 @@
 
 ;; Auto complete mode
 ;; Always suggest completions.
-(require 'popup)
-(require 'auto-complete)
- (global-set-key (kbd "C-<return>")
-                 (lambda () (interactive)
-                   (progn (auto-complete-mode 1) (auto-complete))))
+; (require 'popup)
+; (require 'auto-complete)
+; (global-set-key (kbd "C-<return>")
+;                 (lambda () (interactive)
+;                   (progn (auto-complete-mode 1) (auto-complete))))
 
 ;; Visual Regexp
 ;; Replace normal query-replace with a better one
@@ -300,6 +325,9 @@
 ;; Programming
 ;; ============
 
+;; completion
+(add-hook 'after-init-hook 'global-company-mode)
+
 ;; Flycheck
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -326,20 +354,36 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("4f2ede02b3324c2f788f4e0bad77f7ebc1874eff7971d2a2c9b9724a50fb3f65" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "28ec8ccf6190f6a73812df9bc91df54ce1d6132f18b4c8fcc85d45298569eb53" "4e4d9f6e1f5b50805478c5630be80cce40bee4e640077e1a6a7c78490765b03f" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" "1e67765ecb4e53df20a96fb708a8601f6d7c8f02edb09d16c838e465ebe7f51b" default)))
+    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" default)))
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.2)
- '(package-selected-packages
-   (quote
-    (heroku-theme afternoon-theme solarized-theme auto-complete rebecca-theme dracula-theme paganini-theme))))
+ '(magit-commit-arguments (quote ("--gpg-sign=D452235087A2F031")))
+ '(package-selected-packages (quote (dracula-theme company ggtags))))
 
 ;; YASnippets
 ;; Expand e.g. "for<tab>" to "for(int i = 0; i < N; i++) {}"
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;; GGTags
+(require 'ggtags)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+              (ggtags-mode 1))))
+
+(define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
+(define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
+(define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
+(define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
+(define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
+(define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
+(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
+
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "alternateSelectedControlTextColor" :foreground "controlDarkShadowColor" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Menlo")))))
+ )
