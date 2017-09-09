@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- package-delete
  load-file
+ hs-show-block
+ hs-minor-mode
+ package-delete
  git-mode
  update-file-autoloads
  quit-window
- package-install
- package-refresh-contents
 )
 
 ;; ----- smex-data -----
@@ -24,7 +24,7 @@
  (magit-version . 1)
  (magit-status . 1)
  (vc-mode-line . 1)
- (load-file . 602)
+ (load-file . 603)
  (sml/setup . 2)
  (sml/customize . 1)
  (sml/customize-faces . 1)
@@ -53,4 +53,6 @@
  (update-file-autoloads . 3)
  (vc-git-grep . 1)
  (git-global-mode . 3)
+ (hs-minor-mode . 1)
+ (hs-show-block . 1)
 )

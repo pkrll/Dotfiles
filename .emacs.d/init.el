@@ -1,4 +1,3 @@
-
 ;;; Init.el --- Summary
 ;;; Commentary:
 ;; This is the official Emacs init file for the course IOOPM.
@@ -385,6 +384,8 @@
 ;; terminal
 (global-set-key (kbd "M-s-t") 'shell)
 
+;; HideShow
+(global-set-key (kbd "s-H") 'hs-toggle-hiding)
 
 
 ;;; init.el ends here
