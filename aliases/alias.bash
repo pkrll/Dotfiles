@@ -6,5 +6,5 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias makesym=".makesym.sh"
 alias resource=". ~/.bashrc"
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
-
+alias emacsnw="/usr/local/Cellar/emacs/25.2/bin/emacs -nw"
+alias emacs="/usr/local/Cellar/emacs/25.2/bin/emacs"
