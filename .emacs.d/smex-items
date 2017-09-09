@@ -1,22 +1,22 @@
 
 ;; ----- smex-history -----
 (
+ package-delete
  load-file
- sr-speedbar-open
- sr-speedbar-toggle
- speedbar-frame-mode
- highlight-phrase
- load-theme
+ git-mode
+ update-file-autoloads
+ quit-window
  package-install
+ package-refresh-contents
 )
 
 ;; ----- smex-data -----
 (
- (package-install . 19)
- (ggtags-mode . 6)
+ (package-install . 20)
+ (ggtags-mode . 7)
  (ggtags-create-tags . 1)
  (ggtags-view-search-history . 1)
- (package-refresh-contents . 8)
+ (package-refresh-contents . 9)
  (load-theme . 25)
  (company-mode . 1)
  (company-complete . 1)
@@ -24,19 +24,33 @@
  (magit-version . 1)
  (magit-status . 1)
  (vc-mode-line . 1)
- (load-file . 453)
+ (load-file . 602)
  (sml/setup . 2)
  (sml/customize . 1)
  (sml/customize-faces . 1)
  (sml/apply-theme . 1)
- (package-delete . 7)
+ (package-delete . 8)
  (speedbar . 1)
  (eval-expression . 1)
  (customize-themes . 4)
- (yas-new-snippet . 2)
+ (yas-new-snippet . 3)
  (yas-reload-all . 3)
  (speedbar-frame-mode . 3)
  (sr-speedbar-open . 4)
  (highlight-phrase . 1)
  (sr-speedbar-toggle . 1)
+ (git-mode . 88)
+ (new-frame . 1)
+ (lower-frame . 1)
+ (make-directory . 1)
+ (ns-next-frame . 1)
+ (next-multiframe-window . 4)
+ (gdb . 5)
+ (compile . 3)
+ (visual-mark-ring-mode . 10)
+ (git-remote-status . 5)
+ (quit-window . 1)
+ (update-file-autoloads . 3)
+ (vc-git-grep . 1)
+ (git-global-mode . 3)
 )

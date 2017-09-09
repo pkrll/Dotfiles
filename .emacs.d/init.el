@@ -1,26 +1,14 @@
-;; This is the official Emacs init file for the course IOOPM. It
-;; uses English, not because anyone thinks it's cooler than
-;; Swedish, but to avoid encoding problems with using Swedish
-;; characters. Put it in `~/.emacs.d/init.el` to use it for your
-;; own Emacs. You can use as many or as few of these settings as
-;; you would like. Experiment and try to find a set-up that suits
-;; you!
-;;
-;; Some settings in this file are commented out. They are the ones
-;; that require some choice of parameter (such as a color) or that
-;; might be considered more intrusive than other settings (such as
-;; linum-mode).
-;;
-;; Whenever you come across something that looks like this
-;;
-;;    (global-set-key (kbd "C-e") 'move-end-of-line)
-;;
-;; it is a command that sets the keyboard shortcut for some
-;; function. If you find a function that you like, whose keyboard
-;; shortcut you don't like, you can (and should!) always change it to
-;; something that you do like.
 
-;; This must be here, otherwise emacs will bug me about the theme
+;;; Init.el --- Summary
+;;; Commentary:
+;; This is the official Emacs init file for the course IOOPM.
+
+
+;;=============
+;; Standard
+;;=============
+;; This must be here, otherwise Emacs will bug me about the theme
+;;; Code:
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -32,11 +20,18 @@
  '(package-selected-packages
    (quote
     (dracula-theme sr-speedbar with-editor rich-minority ggtags dash company-irony)))
+ '(scroll-bar-mode nil)
+ '(scroll-conservatively 100)
  '(speedbar-default-position (quote left)))
 
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
 
 ;; ===========
-;; Appearance
+;; Mode-line
 ;; ===========
 
 (setq-default mode-line-buffer-identification
@@ -45,20 +40,17 @@
 (setq-default mode-line-format
               '(
                 (:eval (propertize " ❯ " 'face '(:foreground "white" :weight: normal)))
-                mode-line-buffer-identification
+               ;;mode-line-buffer-identification
                 (:eval (propertize "%b" 'face '(:foreground "#6FADC0" :weight bold)))
                 " [%*] "
                 (:eval (concat "[" (concat (propertize (substring vc-mode 1) 'face '(:foreground "#C06F98" :weight bold)) "] " )))
-                "(Line: %l, Col: %c)"
+                (:eval (propertize "(Line: %l, Col: %c) " 'face '(:foreground "green" )))
                 ))
+;;============
+;; Appearance
+;;============
+
 ;; Disable the menu bar
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 (if (fboundp 'menu-bar-mode)
     (menu-bar-mode -1))
 
@@ -79,27 +71,11 @@
 (setq default-major-mode 'text-mode)
 
 ;; Show time using Swedish format
-(setq display-time-day-and-date t
-      display-time-24hr-format t)
-(display-time)
+;;(setq display-time-day-and-date t
+;;      display-time-24hr-format t)
+;;(display-time)
 
-;; Set which colors to use
-;; You can see a list of all the available colors by checking the
-;; variable "color-name-rgb-alist" (Type "C-h v color-name-rgb-alist
-;; <RET>"). Most normal color names work, like black, white, red,
-;; green, blue, etc.
-; (set-background-color "black")
-; (set-foreground-color "white")
-; (set-cursor-color "white")
-
-;; Set a custom color theme
-;; You can also try using a custom theme, which changes more colors
-;; than just the three above. For a list of all available themes,
-;; press "M-x customize-themes <RET>". You can also use a theme in
-;; combination with the above set-color-commands.
-;;(if display-graphic-p
-;;    (progn
-;;      (load-theme 'wombat)))
+;; Theme
 (load-theme 'dracula)
 
 ;; =====
@@ -148,6 +124,15 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 ;; ===========
+;; 
+;; ===========
+;;(add-to-list 'load-path "~/.emacs.d/visual-mark-ring-mode.el")
+;;(autoload 'visual-mark-ring-mode "~/.emacs.d/visual-mark-ring-mode.el" "" t)
+(add-to-list 'load-path "~/.emacs.d/git-mode.el")
+(autoload 'git-mode "~/.emacs.d/git-mode.el" "" t)
+
+
+;; ===========
 ;; Navigation
 ;; ===========
 
@@ -190,12 +175,26 @@
 (require 'ace-window)
 (global-set-key (kbd "C-x o") 'ace-window)
 
-
 ;; imenu
 ;; Language-aware navigation
 (require 'imenu-anywhere)
 (setq imenu-auto-rescan t)
 (global-set-key (kbd "C-.") 'imenu-anywhere)
+
+;; GGTags
+(require 'ggtags)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+              (ggtags-mode 1))))
+
+(define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
+(define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
+(define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
+(define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
+(define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
+(define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
+(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
 
 ;; ===========
 ;; Editing
@@ -361,29 +360,34 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-;; GGTags
-(require 'ggtags)
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
-              (ggtags-mode 1))))
+;;=============
+;; DEBUGGING
+;;=============
+(setq
+ ;; use gdb-many-windows by default
+ gdb-many-windows t
+ ;; Non-nil means display source file containing the main routine at startup
+ gdb-show-main t
+ )
 
-(define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
-(define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
-(define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
-(define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
-(define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
-(define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
-(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
+;; =============
+;; Custom keybindings
+;; =============
 
 ;; speedbar
 (setq speedbar-show-unknown-files t)
 (global-set-key "\M-s\M-s" 'sr-speedbar-toggle)
 
+;; Window
+(global-set-key (kbd "s-<") 'next-multiframe-window)
+(global-set-key (kbd "s-t") 'split-window-right)
+
 ;; terminal
 (global-set-key (kbd "M-s-t") 'shell)
 
 
+
+;;; init.el ends here
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

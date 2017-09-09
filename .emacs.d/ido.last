@@ -2,17 +2,20 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/extramaterial/lathundar/" . "gdb/")
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/extramaterial/" . "lathundar/")
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/" . "extramaterial/")
  ("/Users/ardalansamimi/Documents/Skola/IOOPM/Ardalan.Samimisadeh.1548/inluppar/fas1/" . "lager1/")
  ("/Users/ardalansamimi/Documents/Skola/IOOPM/Ardalan.Samimisadeh.1548/inluppar/" . "fas1/")
  ("/Users/ardalansamimi/Documents/Skola/IOOPM/Ardalan.Samimisadeh.1548/" . "inluppar/")
- ("/Users/ardalansamimi/.emacs.d/snippets/" . "c-mode/")
+ ("/Users/ardalansamimi/.emacs.d/snippets/" . "latex-mode/")
  ("/Users/ardalansamimi/.emacs.d/" . "snippets/")
  ("/Users/ardalansamimi/" . ".emacs.d/")
  ("/Users/" . "ardalansamimi/")
  ("/" . "Users/")
  ("/Users/ardalansamimi/.dotfiles/.emacs.d/elpa/" . "dracula-theme-20170412.845/")
  ("/Users/ardalansamimi/.dotfiles/.emacs.d/ioopm-packages/" . "expand-region/")
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/" . "Ardalan.Samimisadeh.1548/")
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/" . "ioopm17/")
  ("/Users/ardalansamimi/Documents/Skola/" . "IOOPM/")
  ("/Users/ardalansamimi/Documents/" . "Skola/")
 )
@@ -20,10 +23,16 @@
 ;; ----- ido-work-directory-list -----
 (
  "/Users/ardalansamimi/.emacs.d/"
- "/Users/ardalansamimi/Documents/Skola/IOOPM/Ardalan.Samimisadeh.1548/inluppar/fas1/lager1/"
- "/Users/ardalansamimi/Documents/Skola/IOOPM/lab5/"
- "/Users/ardalansamimi/.emacs.d/snippets/c-mode/"
  "/Users/ardalansamimi/.dotfiles/.emacs.d/"
+ "/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/extramaterial/lathundar/gdb/"
+ "/Users/ardalansamimi/Documents/Skola/IOOPM/lab5/"
+ "/Users/ardalansamimi/"
+ "/Users/ardalansamimi/.emacs.d/snippets/latex-mode/"
+ "/Users/ardalansamimi/Documents/Skola/IOOPM/Emacs/"
+ "/Users/ardalansamimi/Documents/Skola/IOOPM/Planering/"
+ "/Users/ardalansamimi/Documents/Skola/IOOPM/lab4/"
+ "/Users/ardalansamimi/Documents/Skola/IOOPM/Ardalan.Samimisadeh.1548/inluppar/fas1/lager1/"
+ "/Users/ardalansamimi/.emacs.d/snippets/c-mode/"
  "/Users/ardalansamimi/.dotfiles/.emacs.d/elpa/dracula-theme-20170412.845/"
  "/Users/ardalansamimi/.dotfiles/.emacs.d/ioopm-packages/expand-region/"
 )
@@ -31,32 +40,52 @@
 ;; ----- ido-work-file-list -----
 (
  "init.el"
- "list.c"
- "db.c"
- "goods.c"
- "incl"
- "WombatOSX-theme.el"
- "dracula-theme.el"
- "erlang-mode-expansions.el"
+ "git-mode.el"
+ "visual-mark-ring-mode.el"
+ "loaddefs.el"
+ "wrong.c"
+ "right.c"
+ "cat.c"
+ ".gdbinit"
+ "latex"
+ "lathund.tex"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/ardalansamimi/.emacs.d/" (22961 47769 0 0) "snippets/" "smex-items" "recentf~" "recentf" "ioopm-packages/" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "../" "./")
+ ("/Users/ardalansamimi/.emacs.d/" (22963 12703 0 0) "visual-mark-ring-mode.el" "snippets/" "smex-items" "recentf~" "recentf" "loaddefs.el~" "ioopm-packages/" "init.el~" "init.el" "ido.last~" "ido.last" "git-mode.el~" "git-mode.el" "elpa/" "auto-save-list/" "../" "./")
+
+ ("/Users/ardalansamimi/.dotfiles/.emacs.d/" (22963 11818 0 0) "visual-mark-ring-mode.el" "snippets/" "smex-items" "recentf~" "recentf" "loaddefs.el~" "ioopm-packages/" "init.el~" "init.el" "ido.last~" "ido.last" "git-mode.el~" "git-mode.el" "elpa/" "auto-save-list/" "../" "./")
+
+ ("/Users/ardalansamimi/" (22963 7412 0 0) "Sites/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".zshrc" ".zsh_history" ".zcompdump" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".subversion/" ".stack/" ".ssh/" ".python-eggs/" ".putty/" ".prefs/" ".oracle_jre_usage/" ".npmrc" ".npm/" ".netrc" ".lesshst" ".itmstransporter/" ".inputrc" ".hyper_plugins/" ".hyper.js" ".gnupg/" ".gitconfig" ".ghc/" ".gem/" ".gdbinit" ".emacs.d/" ".DS_Store" ".dropbox/" ".dotfiles_backup/" ".dotfiles/" ".config/" ".composer/" ".cocoapods/" ".CFUserTextEncoding" ".cache/" ".cabal/" ".bundle/" ".bashrc" ".bash_sessions/" ".bash_profile" ".bash_history" ".atom/" "../" "./")
+
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/extramaterial/lathundar/gdb/" (22963 3591 0 0) "wrong.c~" "wrong.c" "right.c" "gdb-refcard.pdf" "echoln.c" "debugging.pdf" "a.out.dSYM/" "a.out" "../" "./")
+
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/extramaterial/lathundar/" (22963 665 0 0) "refactoring/" "rapportskrivning/" "make/" "github/" "gdb/" "emacs/" "cunit/" ".DS_Store" "../" "./")
+
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/extramaterial/" (22963 665 0 0) "utvikningar/" "screencasts/" "README.md" "ovningar/" "lathundar/" "kodgranskningsprotokoll.pdf" "kodexempel.md" "gamlakodprov/" "Defensiv Programmering - Checklista.pdf" "CommonCompilerErrors.java" "C-addendum-om-stack-och-heap.pdf" ".DS_Store" "../" "./")
+
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/ioopm17/" (22963 1602 0 0) "uppgifter/" "README.md" "labbar/" "forelasningar/" "extramaterial/" ".gitignore" ".DS_Store" "../" "./")
+
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/lab5/" (22963 1560 0 0) "utils.h~" "utils.h" "utils.c~" "utils.c" "test.txt" "passthrough.c~" "passthrough.c" "GTAGS" "GRTAGS" "GPATH" "db.c~" "db.c" "cp.c~" "cp.c" "cat.c~" "cat.c" "a.out.dSYM/" "a.out" "#db.c#" "../" "./")
+
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/Emacs/" (22963 576 0 0) "lathund.tex~" "lathund.tex" "lathund.pdf" "lathund.log" "lathund.aux" ".DS_Store" "../" "./")
+
+ ("/Users/ardalansamimi/.emacs.d/snippets/" (22962 41928 0 0) "latex-mode/" "emacs-lisp-mode/" "c-mode/" "../" "./")
+
+ ("/Users/ardalansamimi/.emacs.d/snippets/latex-mode/" (22962 41928 0 0) "latex" "../" "./")
+
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/Planering/" (22961 6231 0 0) "planering.tex~" "planering.tex" "planering.pdf" "planering.log" "planering.aux" "_region_.tex" "../" "./")
+
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/" (22962 41734 0 0) "Planering/" "lab5/" "lab4/" "lab3/" "lab2/" "lab1/" "ioopm17/" "Emacs/" "Ardalan.Samimisadeh.1548/" ".DS_Store" "../" "./")
+
+ ("/Users/ardalansamimi/Documents/Skola/IOOPM/lab4/" (22958 28925 0 0) "utils.h~" "utils.h" "utils.c~" "utils.c" "tests.c~" "tests.c" "swap.c~" "struct.c~" "struct.c" "p1.c" "geo.c~" "geo.c" "db.c~" "db.c" "a.out" "#struct.c#" "#p1.c#" "../" "./")
 
  ("/Users/ardalansamimi/Documents/Skola/IOOPM/Ardalan.Samimisadeh.1548/inluppar/fas1/lager1/" (22961 45891 0 0) "tree.h" "shelf.h~" "shelf.h" "shelf.c~" "shelf.c" "README.md" "list.h~" "list.h" "list.c~" "list.c" "GTAGS" "GRTAGS" "GPATH" "goods.c~" "goods.c" "#goods.c#" "../" "./")
 
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/lab5/" (22961 27883 0 0) "utils.h~" "utils.h" "utils.c~" "utils.c" "test.txt" "passthrough.c~" "passthrough.c" "GTAGS" "GRTAGS" "GPATH" "db.c~" "db.c" "cp.c~" "cp.c" "cat.c~" "cat.c" "a.out" "#db.c#" "../" "./")
-
  ("/Users/ardalansamimi/.dotfiles/" (22961 41604 0 0) "Terminal Profiles/" "setup/" "README.md" "functions/" "completion/" "aliases/" ".zshrc" ".vimrc" ".vim/" ".inputrc" ".gitignore_global" ".gitconfig" ".git/" ".emacs.d/" ".DS_Store" ".dircolors" ".bashrc" ".bash_profile" ".atom/" "#.gitignore_global#" "../" "./")
 
- ("/Users/ardalansamimi/.dotfiles/.emacs.d/" (22961 46931 0 0) "snippets/" "smex-items" "recentf~" "recentf" "ioopm-packages/" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "../" "./")
-
- ("/Users/ardalansamimi/" (22961 45697 0 0) "Sites/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".zshrc" ".zsh_history" ".zcompdump" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".subversion/" ".stack/" ".ssh/" ".python-eggs/" ".putty/" ".prefs/" ".oracle_jre_usage/" ".npmrc" ".npm/" ".netrc" ".lesshst" ".itmstransporter/" ".inputrc" ".hyper_plugins/" ".hyper.js" ".gnupg/" ".gitconfig" ".ghc/" ".gem/" ".emacs.d/" ".DS_Store" ".dropbox/" ".dotfiles_backup/" ".dotfiles/" ".config/" ".composer/" ".cocoapods/" ".CFUserTextEncoding" ".cache/" ".cabal/" ".bundle/" ".bashrc" ".bash_sessions/" ".bash_profile" ".bash_history" ".atom/" "../" "./")
-
  ("/Users/ardalansamimi/.emacs.d/snippets/c-mode/" (22961 43871 0 0) "incl" "../" "./")
-
- ("/Users/ardalansamimi/.emacs.d/snippets/" (22961 43487 0 0) "emacs-lisp-mode/" "c-mode/" "../" "./")
 
  ("/Users/" (22500 7710 0 0) "Shared/" "Guest/" "ardalansamimi/" ".localized" "../" "./")
 
@@ -73,8 +102,6 @@
  ("/Users/ardalansamimi/.dotfiles/.emacs.d/ioopm-packages/expand-region/" (22961 27686 0 0) "web-mode-expansions.elc" "web-mode-expansions.el" "the-org-mode-expansions.elc" "the-org-mode-expansions.el" "text-mode-expansions.elc" "text-mode-expansions.el" "subword-mode-expansions.elc" "subword-mode-expansions.el" "sml-mode-expansions.elc" "sml-mode-expansions.el" "ruby-mode-expansions.elc" "ruby-mode-expansions.el" "python-mode-expansions.elc" "python-mode-expansions.el" "python-el-fgallina-expansions.elc" "python-el-fgallina-expansions.el" "python-el-expansions.elc" "python-el-expansions.el" "octave-expansions.elc" "octave-expansions.el" "nxml-mode-expansions.elc" "nxml-mode-expansions.el" "latex-mode-expansions.elc" "latex-mode-expansions.el" "jsp-expansions.elc" "jsp-expansions.el" "js2-mode-expansions.elc" "js2-mode-expansions.el" "js-mode-expansions.elc" "js-mode-expansions.el" "html-mode-expansions.elc" "html-mode-expansions.el" "feature-mode-expansions.elc" "feature-mode-expansions.el" "expand-region.elc" "expand-region.el" "expand-region-pkg.el" "expand-region-custom.elc" "expand-region-custom.el" "expand-region-core.elc" "expand-region-core.el" "expand-region-autoloads.el~" "expand-region-autoloads.el" "erlang-mode-expansions.elc" "erlang-mode-expansions.el" "er-basic-expansions.elc" "er-basic-expansions.el" "enh-ruby-mode-expansions.elc" "enh-ruby-mode-expansions.el" "css-mode-expansions.elc" "css-mode-expansions.el" "cperl-mode-expansions.elc" "cperl-mode-expansions.el" "clojure-mode-expansions.elc" "clojure-mode-expansions.el" "cc-mode-expansions.elc" "cc-mode-expansions.el" "../" "./")
 
  ("/Users/ardalansamimi/.dotfiles/.emacs.d/ioopm-packages/" (22468 11861 0 0) "yasnippet/" "visual-regexp/" "smex/" "seq/" "multiple-cursors/" "imenu-anywhere/" "flycheck/" "expand-region/" "dash/" "avy/" "ace-window/" "ace-jump-mode/" "../" "./")
-
- ("/Users/ardalansamimi/Documents/Skola/IOOPM/" (22961 4691 0 0) "Planering/" "lab5/" "lab4/" "lab3/" "lab2/" "lab1/" "ioopm17/" "Ardalan.Samimisadeh.1548/" ".DS_Store" "../" "./")
 
  ("/Users/ardalansamimi/Documents/Skola/" (22957 25354 0 0) "IOOPM/" "Årskurs 1/" "Automatateori/" ".DS_Store" "../" "./")
 

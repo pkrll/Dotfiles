@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: Latex outline
+# key: latex
+# --
+\documentclass{${1:article}}
+\usepackage[utf8]{inputenc}
+\usepackage{${2:listings}}
+\begin{document}
+\title{${3:title}}
+\author{${4:Ardalan Samimi}}
+\maketitle
+\newpage
+\section{${5:section}}
+$0
+\end{document}
