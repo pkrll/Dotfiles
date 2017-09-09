@@ -1,4 +1,3 @@
 alias makesym="bash ~/.dotfiles/setup/.makesym.sh"
+alias cleanup="bash ~/.dotfiles/setup/.cleanup.sh"
 alias resource=". ~/.zshrc"
-alias emacsnw="/usr/local/Cellar/emacs/25.2/bin/emacs -nw"
-alias emacs="/usr/local/Cellar/emacs/25.2/bin/emacs"

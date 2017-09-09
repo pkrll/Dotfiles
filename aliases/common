@@ -12,6 +12,9 @@ alias egrep='egrep --color=auto'
 alias update='git up'
 alias cdgit="cd ~/Public/Git"
 
+alias emacsnw="/usr/local/Cellar/emacs/25.2/bin/emacs -nw"
+alias emacs="/usr/local/Cellar/emacs/25.2/bin/emacs"
+
 # For non-macos and terminals support --color arg
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dotfiles/.dircolors && eval "$(dircolors -b ~/.dotfiles/.dircolors)" || eval "$(dircolors -b)"
