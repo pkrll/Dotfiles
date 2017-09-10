@@ -2,12 +2,12 @@
 ;; ----- smex-history -----
 (
  load-file
- hs-show-block
- hs-minor-mode
- package-delete
- git-mode
- update-file-autoloads
- quit-window
+ make-directory
+ find-file
+ c-mode
+ yas-expand
+ yas-new-snippet
+ load-theme
 )
 
 ;; ----- smex-data -----
@@ -24,7 +24,7 @@
  (magit-version . 1)
  (magit-status . 1)
  (vc-mode-line . 1)
- (load-file . 603)
+ (load-file . 623)
  (sml/setup . 2)
  (sml/customize . 1)
  (sml/customize-faces . 1)
@@ -33,7 +33,7 @@
  (speedbar . 1)
  (eval-expression . 1)
  (customize-themes . 4)
- (yas-new-snippet . 3)
+ (yas-new-snippet . 4)
  (yas-reload-all . 3)
  (speedbar-frame-mode . 3)
  (sr-speedbar-open . 4)
@@ -42,10 +42,10 @@
  (git-mode . 88)
  (new-frame . 1)
  (lower-frame . 1)
- (make-directory . 1)
+ (make-directory . 2)
  (ns-next-frame . 1)
  (next-multiframe-window . 4)
- (gdb . 5)
+ (gdb . 7)
  (compile . 3)
  (visual-mark-ring-mode . 10)
  (git-remote-status . 5)
@@ -53,6 +53,12 @@
  (update-file-autoloads . 3)
  (vc-git-grep . 1)
  (git-global-mode . 3)
- (hs-minor-mode . 1)
+ (hs-minor-mode . 2)
  (hs-show-block . 1)
+ (mc/mark-pop . 1)
+ (mc/edit-lines . 1)
+ (yas-expand . 1)
+ (testfile\.c . 4)
+ (c-mode . 1)
+ (find-file . 1)
 )
