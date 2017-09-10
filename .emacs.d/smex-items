@@ -2,18 +2,18 @@
 ;; ----- smex-history -----
 (
  load-file
- make-directory
- find-file
- c-mode
- yas-expand
- yas-new-snippet
+ mc/mark-next-like-this
+ transient-mark-mode
+ Info-search-backward
  load-theme
+ package-install
+ package-refresh-contents
 )
 
 ;; ----- smex-data -----
 (
  (package-install . 20)
- (ggtags-mode . 7)
+ (ggtags-mode . 8)
  (ggtags-create-tags . 1)
  (ggtags-view-search-history . 1)
  (package-refresh-contents . 9)
@@ -24,7 +24,7 @@
  (magit-version . 1)
  (magit-status . 1)
  (vc-mode-line . 1)
- (load-file . 623)
+ (load-file . 711)
  (sml/setup . 2)
  (sml/customize . 1)
  (sml/customize-faces . 1)
@@ -61,4 +61,17 @@
  (testfile\.c . 4)
  (c-mode . 1)
  (find-file . 1)
+ (ace-window . 1)
+ (mark-word . 2)
+ (select-text-in-quote . 7)
+ (is-mark . 8)
+ (my-fn-that-requires-a-region . 2)
+ (select-word . 4)
+ (set-mark-command . 1)
+ (search-backward . 1)
+ (Info-search-backward . 1)
+ (transient-mark-mode . 2)
+ (search-selection . 1)
+ (mc/mark-next-like-this . 20)
+ (select-word-and-expand . 6)
 )

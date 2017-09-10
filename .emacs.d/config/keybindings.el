@@ -1,5 +1,6 @@
 ;;; bindings.el
-
+;;; Documentary:
+;;; Code:
 
 ;;; Shortcut for finding a recently used file
 (global-set-key "\C-x\C-r" 'recentf-ido-find-file)
@@ -42,9 +43,9 @@
 (define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
 
 ;;; multiple cursors
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-next-word-like-this)
+(global-set-key (kbd "C->") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-M-c") 'mc/edit-lines)
 
 ;; Replace normal query-replace with a better one
@@ -62,3 +63,22 @@
 (define-key key-translation-map (kbd "M-/") (kbd "\\"))
 (define-key key-translation-map (kbd "M-2") (kbd "@"))
 (define-key key-translation-map (kbd "M-4") (kbd "$"))
+
+
+(defun select-word ()
+  "Select the word the cursor is currently on."
+  (interactive)
+  (let (p1 p2)
+    (skip-chars-backward "^<>()”{}[]」»\"'[:space:][:blank:]")
+    (setq p1 (point))
+    (skip-chars-forward "^[:space:][:blank:]:;<>()”{}[]」»\"")
+    (setq p2 (point))
+    (set-mark p1)
+    )
+  )
+
+;; select this word (and the next if repeated)    
+(global-set-key (kbd "s-d") 'select-word-and-next)
+
+(provide 'bindings)
+;;; bindings.el ends here

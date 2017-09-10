@@ -1,12 +1,24 @@
+;;; defuns --- Summary
+;;; Commentary:
+;;; Code:
+
 (defun testbed-c ()
-  "Insert boilerplate c code for testing"
+  "Insert boilerplate c code for testing."
+  (interactive)
+  ;(if (member major-mode '(c-mode))
+      (create-testfile-c)
+   ; (message "Couldn't create testfile") )
+  )
+
+
+(defun create-testfile-c ()
+  "."
   (interactive)
   (find-file "~/.emacs.d/testbed/testfile.c")
   (c-mode)
   (insert "testfile")
   (yas-expand)
   )
-(global-set-key (kbd "C-c C-t") 'testbed-c)
 
 ;;; From http://emacsredux.com/blog/2013/04/03/delete-file-and-buffer/
 (defun delete-file-and-buffer ()
@@ -27,3 +39,17 @@
   (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
     (when file
       (find-file file))))
+
+(defun sel () (execute-kbd-macro (kbd "C-<")) )
+
+(defun select-word-and-next ()
+  "Select the word the cursor is currently on and expand to the next similar word."
+  (interactive)
+  (if (and mark-active (/= (point) (mark)))
+    (sel)
+    (select-word)
+    )
+  )
+
+(provide 'defuns)
+;;; defuns.el ends here
