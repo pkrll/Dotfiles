@@ -65,18 +65,6 @@
 (define-key key-translation-map (kbd "M-4") (kbd "$"))
 
 
-(defun select-word ()
-  "Select the word the cursor is currently on."
-  (interactive)
-  (let (p1 p2)
-    (skip-chars-backward "^<>()”{}[]」»\"'[:space:][:blank:]")
-    (setq p1 (point))
-    (skip-chars-forward "^[:space:][:blank:]:;<>()”{}[]」»\"")
-    (setq p2 (point))
-    (set-mark p1)
-    )
-  )
-
 ;; select this word (and the next if repeated)    
 (global-set-key (kbd "s-d") 'select-word-and-next)
 

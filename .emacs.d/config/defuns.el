@@ -42,6 +42,18 @@
 
 (defun sel () (execute-kbd-macro (kbd "C-<")) )
 
+(defun select-word ()
+  "Select the word the cursor is currently on."
+  (interactive)
+  (let (p1 p2)
+    (skip-chars-backward "^<>()”{}[]」»\"'[:space:][:blank:]")
+    (setq p1 (point))
+    (skip-chars-forward "^[:space:][:blank:]:;<>()”{}[]」»\"")
+    (setq p2 (point))
+    (set-mark p1)
+    )
+  )
+
 (defun select-word-and-next ()
   "Select the word the cursor is currently on and expand to the next similar word."
   (interactive)
