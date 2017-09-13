@@ -2,12 +2,12 @@
 ;; ----- smex-history -----
 (
  load-file
+ replace-string
+ gdb
+ yas-new-snippet
+ hs-minor-mode
+ downcase-dwim
  mc/mark-next-like-this
- transient-mark-mode
- Info-search-backward
- load-theme
- package-install
- package-refresh-contents
 )
 
 ;; ----- smex-data -----
@@ -24,7 +24,7 @@
  (magit-version . 1)
  (magit-status . 1)
  (vc-mode-line . 1)
- (load-file . 711)
+ (load-file . 721)
  (sml/setup . 2)
  (sml/customize . 1)
  (sml/customize-faces . 1)
@@ -33,7 +33,7 @@
  (speedbar . 1)
  (eval-expression . 1)
  (customize-themes . 4)
- (yas-new-snippet . 4)
+ (yas-new-snippet . 5)
  (yas-reload-all . 3)
  (speedbar-frame-mode . 3)
  (sr-speedbar-open . 4)
@@ -45,7 +45,7 @@
  (make-directory . 2)
  (ns-next-frame . 1)
  (next-multiframe-window . 4)
- (gdb . 7)
+ (gdb . 10)
  (compile . 3)
  (visual-mark-ring-mode . 10)
  (git-remote-status . 5)
@@ -53,7 +53,7 @@
  (update-file-autoloads . 3)
  (vc-git-grep . 1)
  (git-global-mode . 3)
- (hs-minor-mode . 2)
+ (hs-minor-mode . 4)
  (hs-show-block . 1)
  (mc/mark-pop . 1)
  (mc/edit-lines . 1)
@@ -72,6 +72,8 @@
  (Info-search-backward . 1)
  (transient-mark-mode . 2)
  (search-selection . 1)
- (mc/mark-next-like-this . 20)
+ (mc/mark-next-like-this . 21)
  (select-word-and-expand . 6)
+ (downcase-dwim . 3)
+ (replace-string . 1)
 )

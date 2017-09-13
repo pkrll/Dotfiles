@@ -14,11 +14,15 @@
 (defun create-testfile-c ()
   "."
   (interactive)
-  (find-file "~/.emacs.d/testbed/testfile.c")
-  (c-mode)
-  (insert "testfile")
-  (yas-expand)
-  )
+  (let ((dirname (file-name-directory buffer-file-name))
+       (bufname (file-name-base buffer-file-name)))
+    ;;  (find-file "~/.emacs.d/testbed/testfile.c")
+    (find-file (concat dirname "testfile.c"))
+    (c-mode)
+    (insert "testfile")
+    (yas-expand)
+    (insert bufname)
+  ))
 
 ;;; From http://emacsredux.com/blog/2013/04/03/delete-file-and-buffer/
 (defun delete-file-and-buffer ()
