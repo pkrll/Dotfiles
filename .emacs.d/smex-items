@@ -2,38 +2,38 @@
 ;; ----- smex-history -----
 (
  load-file
- replace-string
- gdb
- yas-new-snippet
  hs-minor-mode
- downcase-dwim
- mc/mark-next-like-this
+ goto-line
+ mouse-wheel-mode
+ package-delete
+ package-install
+ load-theme
 )
 
 ;; ----- smex-data -----
 (
- (package-install . 20)
- (ggtags-mode . 8)
- (ggtags-create-tags . 1)
+ (package-install . 33)
+ (ggtags-mode . 11)
+ (ggtags-create-tags . 2)
  (ggtags-view-search-history . 1)
- (package-refresh-contents . 9)
- (load-theme . 25)
+ (package-refresh-contents . 15)
+ (load-theme . 51)
  (company-mode . 1)
  (company-complete . 1)
- (customize-variable . 1)
+ (customize-variable . 3)
  (magit-version . 1)
  (magit-status . 1)
  (vc-mode-line . 1)
- (load-file . 721)
+ (load-file . 808)
  (sml/setup . 2)
  (sml/customize . 1)
  (sml/customize-faces . 1)
  (sml/apply-theme . 1)
- (package-delete . 8)
+ (package-delete . 13)
  (speedbar . 1)
  (eval-expression . 1)
  (customize-themes . 4)
- (yas-new-snippet . 5)
+ (yas-new-snippet . 12)
  (yas-reload-all . 3)
  (speedbar-frame-mode . 3)
  (sr-speedbar-open . 4)
@@ -46,14 +46,14 @@
  (ns-next-frame . 1)
  (next-multiframe-window . 4)
  (gdb . 10)
- (compile . 3)
+ (compile . 16)
  (visual-mark-ring-mode . 10)
  (git-remote-status . 5)
  (quit-window . 1)
  (update-file-autoloads . 3)
  (vc-git-grep . 1)
  (git-global-mode . 3)
- (hs-minor-mode . 4)
+ (hs-minor-mode . 7)
  (hs-show-block . 1)
  (mc/mark-pop . 1)
  (mc/edit-lines . 1)
@@ -76,4 +76,29 @@
  (select-word-and-expand . 6)
  (downcase-dwim . 3)
  (replace-string . 1)
+ (smex . 6)
+ (font-lock-mode . 2)
+ (customize-face . 3)
+ (battery . 1)
+ (helm-M-x . 1)
+ (shell . 1)
+ (evil-mode . 2)
+ (hs-hide-all . 2)
+ (emacs-init-time . 1)
+ (eshell-mode . 1)
+ (semantic-mode . 3)
+ (semantic-add-system-include . 3)
+ (semantic-c-describe-environment . 1)
+ (semantic-gcc-setup . 1)
+ (semantic-customize-system-include-path . 2)
+ (semanticdb-find-test-translate-path . 1)
+ (semantic-remove-system-include . 2)
+ (flycheck-info . 1)
+ (flycheck-describe-checker . 2)
+ (package-menu-mode . 2)
+ (smooth-scroll-mode . 3)
+ (scroll-up-1 . 2)
+ (scroll-down-1 . 7)
+ (mouse-wheel-mode . 5)
+ (goto-line . 1)
 )

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ctype
+# key: ctype
+# --
+#include <ctype.h>

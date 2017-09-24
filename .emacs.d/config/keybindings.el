@@ -45,7 +45,7 @@
 ;;; multiple cursors
 (global-set-key (kbd "C-<") 'mc/mark-next-word-like-this)
 (global-set-key (kbd "C->") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-M-c") 'mc/edit-lines)
 
 ;; Replace normal query-replace with a better one
@@ -64,9 +64,40 @@
 (define-key key-translation-map (kbd "M-2") (kbd "@"))
 (define-key key-translation-map (kbd "M-4") (kbd "$"))
 
-
-;; select this word (and the next if repeated)    
+;; select this word (and the next if repeated)
 (global-set-key (kbd "s-d") 'select-word-and-next)
 
+(defun _makeCompile ()
+  "."
+  (interactive)
+  (compile "make -k")
+  )
+
+(defun _makeRun ()
+  "."
+  (interactive)
+  (compile "make -k run")
+  )
+
+(defun _makeClean ()
+  "."
+  (interactive)
+  (compile "make -k clean")
+  )
+
+;; make
+(global-set-key (kbd "C-c c") '_makeCompile)
+(global-set-key (kbd "C-c r") '_makeRun)
+(global-set-key (kbd "C-c d") '_makeClean)
+
+;; comment/uncomment
+(global-set-key (kbd "s-/") 'comment-line);
+
+(global-set-key (kbd "C-c I") 'find-user-init-file)
+
+(global-set-key (kbd "<f5>") 'start-kbd-macro)
+(global-set-key (kbd "<f6>") 'end-kbd-macro)
+(global-set-key (kbd "<f7>") 'insert-kbd-macro)
+
 (provide 'bindings)
-;;; bindings.el ends here
+;;; keybindings.el ends here

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: ifndef
+# key: ifndef
+# --
+#ifndef __$1_h__
+#define __$2_h__
+
+$0
+
+#endif

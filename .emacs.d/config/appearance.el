@@ -28,7 +28,7 @@
 ;; Default Theme
 ;; =============================
 
-(load-theme 'dracula)
+;;(load-theme 'dracula)
 
 ;; =============================
 ;; Line/column numbering
@@ -44,7 +44,7 @@
 (global-linum-mode t)
 
 ;; Add padding to line numbers
-(setq linum-format "%d ")
+(setq linum-format "%4d ")
 
 ;; =============================
 ;; 4. Miscellaneous
@@ -62,3 +62,4 @@
 ;;(setq display-time-day-and-date t
 ;;      display-time-24hr-format t)
 ;;(display-time)
+

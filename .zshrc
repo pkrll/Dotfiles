@@ -43,6 +43,10 @@ if [[ -f ~/.dotfiles/functions/setprompt.zsh ]]; then
   source ~/.dotfiles/functions/setprompt.zsh
 fi
 
+if [[ -f ~/.dotfiles/functions/ioopm.zsh ]]; then
+    source ~/.dotfiles/functions/ioopm.zsh
+fi
+
 # Different terminal cases
 if [[ $TERM_PROGRAM == "Hyper" ]]; then
   autoload -Uz promptinit; promptinit

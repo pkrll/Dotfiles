@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: cunit
+# key: cunit
+# --
+#include <CUnit/CUnit.h>
+#include <CUnit/Basic.h>
+#include <CUnit/Automated.h>
+
+int main(int argc, char *argv[]) {
+
+    $1
+
+    return 0;
+}

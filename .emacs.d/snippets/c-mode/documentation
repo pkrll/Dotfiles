@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: Documentation
+# key: doc
+# --
+/**
+ * @brief ${1:Brief explanation}
+ *
+ * ${2:Detailed explanation
+ *
+ *}${3:@param  ${4:param 1} ${5:param explanation}
+ *
+ *} @return ${7:return value}
+ */
