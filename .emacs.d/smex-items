@@ -1,22 +1,22 @@
 
 ;; ----- smex-history -----
 (
- load-file
  hs-minor-mode
- goto-line
- mouse-wheel-mode
+ customize-apropos
+ yas-load-directory
+ yas-new-snippet
+ customize-mode
+ java-mode
  package-delete
- package-install
- load-theme
 )
 
 ;; ----- smex-data -----
 (
- (package-install . 33)
+ (package-install . 36)
  (ggtags-mode . 11)
  (ggtags-create-tags . 2)
  (ggtags-view-search-history . 1)
- (package-refresh-contents . 15)
+ (package-refresh-contents . 16)
  (load-theme . 51)
  (company-mode . 1)
  (company-complete . 1)
@@ -24,16 +24,16 @@
  (magit-version . 1)
  (magit-status . 1)
  (vc-mode-line . 1)
- (load-file . 808)
+ (load-file . 824)
  (sml/setup . 2)
  (sml/customize . 1)
  (sml/customize-faces . 1)
  (sml/apply-theme . 1)
- (package-delete . 13)
+ (package-delete . 14)
  (speedbar . 1)
  (eval-expression . 1)
  (customize-themes . 4)
- (yas-new-snippet . 12)
+ (yas-new-snippet . 14)
  (yas-reload-all . 3)
  (speedbar-frame-mode . 3)
  (sr-speedbar-open . 4)
@@ -42,7 +42,7 @@
  (git-mode . 88)
  (new-frame . 1)
  (lower-frame . 1)
- (make-directory . 2)
+ (make-directory . 3)
  (ns-next-frame . 1)
  (next-multiframe-window . 4)
  (gdb . 10)
@@ -53,7 +53,7 @@
  (update-file-autoloads . 3)
  (vc-git-grep . 1)
  (git-global-mode . 3)
- (hs-minor-mode . 7)
+ (hs-minor-mode . 22)
  (hs-show-block . 1)
  (mc/mark-pop . 1)
  (mc/edit-lines . 1)
@@ -75,7 +75,7 @@
  (mc/mark-next-like-this . 21)
  (select-word-and-expand . 6)
  (downcase-dwim . 3)
- (replace-string . 1)
+ (replace-string . 5)
  (smex . 6)
  (font-lock-mode . 2)
  (customize-face . 3)
@@ -101,4 +101,15 @@
  (scroll-down-1 . 7)
  (mouse-wheel-mode . 5)
  (goto-line . 1)
+ (imenu . 1)
+ (package-list-packages . 1)
+ (ggtags-update-tags . 4)
+ (start-kbd-macro . 1)
+ (end-kbd-macro . 7)
+ (insert-kbd-macro . 1)
+ (helm-execute-kmacro . 1)
+ (java-mode . 6)
+ (customize-mode . 2)
+ (yas-load-directory . 1)
+ (customize-apropos . 1)
 )

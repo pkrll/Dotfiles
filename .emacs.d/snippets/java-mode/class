@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: class
+# key: class
+# --
+public class ${1:ClassName} {
+
+       ${4:Type ${5:Name}};
+
+       public ${2:Constructor}(${3:Arguments}) {
+              $0
+       }
+
+}
+

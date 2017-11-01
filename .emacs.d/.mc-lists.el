@@ -5,6 +5,8 @@
       '(
         c-electric-delete-forward
         c-electric-paren
+        c-electric-semi&comma
+        c-end-of-statement
         select-word-and-expand
         select-word-and-next
         smex
@@ -13,9 +15,11 @@
 
 (setq mc/cmds-to-run-once
       '(
+        c-electric-colon
         c-electric-star
         isearch-repeat-forward
         list-directory
         mouse-buffer-menu
         mouse-set-region
+        next-multiframe-window
         ))

@@ -29,8 +29,38 @@
   'cmd-shift-c': 'custom:toggle-ftp'
   'cmd-shift-1': 'bookmarks:view-all'
   'cmd-shift-m': 'remote-ftp:toggle'
-  'alt-g': 'go-to-line:toggle'
 'atom-text-editor':
   'cmd-shift-2': 'bookmarks:toggle-bookmark'
   'cmd-shift-b': 'latex:build'
   'alt-ctrl-c': 'latex:clean'
+  "ctrl-x right": "pane:show-next-item"
+  "ctrl-x ctrl-right": "pane:show-next-item"
+  "ctrl-x left": "pane:show-previous-item"
+  "ctrl-x ctrl-left": "pane:show-previous-item"
+  "cmd-H": "custom:toggle-fold"
+  'shift-cmd-B': 'fuzzy-finder:toggle-git-status-finder'
+"atom-workspace atom-text-editor":
+  'ctrl-l': 'core:move-left'
+  'ctrl-p': 'core:move-up'
+  'ctrl-ö': 'core:move-down'
+  'ctrl-ä': 'core:move-right'
+  "cmd-p": "core:move-to-top",
+  "cmd-ö": "core:move-to-bottom",
+  "cmd-l": "editor:move-to-first-character-of-line",
+  "cmd-L": "editor:select-to-first-character-of-line"
+  "cmd-ä": "editor:move-to-end-of-screen-line",
+  "cmd-Ä": "editor:select-to-end-of-line",
+  "alt-l": "editor:move-to-beginning-of-word",
+  "alt-ä": "editor:move-to-end-of-word",
+  "alt-L": "editor:select-to-beginning-of-word",
+  "alt-Ä": "editor:select-to-end-of-word",
+  "ctrl-alt-l": "editor:move-to-previous-subword-boundary",
+  "ctrl-alt-ä": "editor:move-to-next-subword-boundary",
+  "ctrl-alt-L": "editor:select-to-previous-subword-boundary",
+  "ctrl-alt-Ä": "editor:select-to-next-subword-boundary",
+".platform-darwin atom-text-editor":
+  "ctrl-.": "symbols-view:go-to-declaration"
+  "ctrl-:": "symbols-view:toggle-file-symbols"
+  "alt-.": "command-palette:toggle"
+  "cmd-alt-up": "symbols-view:return-from-declaration"
+  "ctrl-x ctrl-a": "tree-view:add-file"
