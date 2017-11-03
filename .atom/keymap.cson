@@ -46,18 +46,23 @@
   'ctrl-ä': 'core:move-right'
   "cmd-p": "core:move-to-top",
   "cmd-ö": "core:move-to-bottom",
-  "cmd-l": "editor:move-to-first-character-of-line",
+  "cmd-l": "editor:move-to-first-character-of-line"
   "cmd-L": "editor:select-to-first-character-of-line"
-  "cmd-ä": "editor:move-to-end-of-screen-line",
-  "cmd-Ä": "editor:select-to-end-of-line",
-  "alt-l": "editor:move-to-beginning-of-word",
-  "alt-ä": "editor:move-to-end-of-word",
-  "alt-L": "editor:select-to-beginning-of-word",
-  "alt-Ä": "editor:select-to-end-of-word",
-  "ctrl-alt-l": "editor:move-to-previous-subword-boundary",
-  "ctrl-alt-ä": "editor:move-to-next-subword-boundary",
-  "ctrl-alt-L": "editor:select-to-previous-subword-boundary",
-  "ctrl-alt-Ä": "editor:select-to-next-subword-boundary",
+  "cmd-ä": "editor:move-to-end-of-screen-line"
+  "cmd-Ä": "editor:select-to-end-of-line"
+  "alt-l": "editor:move-to-beginning-of-word"
+  "alt-p": "atomic-emacs:scroll-down"
+  "alt-ö": "atomic-emacs:scroll-up"
+  "alt-P": "core:move-to-top"
+  "alt-Ö": "core:move-to-bottom"
+  "alt-ä": "editor:move-to-end-of-word"
+  "alt-L": "editor:select-to-beginning-of-word"
+  "alt-Ä": "editor:select-to-end-of-word"
+  "ctrl-alt-l": "editor:move-to-previous-subword-boundary"
+  "ctrl-alt-ä": "editor:move-to-next-subword-boundary"
+  "ctrl-alt-L": "editor:select-to-previous-subword-boundary"
+  "ctrl-alt-Ä": "editor:select-to-next-subword-boundary"
+  "ctrl-x ctrl-m": "build:select-active-target"
 ".platform-darwin atom-text-editor":
   "ctrl-.": "symbols-view:go-to-declaration"
   "ctrl-:": "symbols-view:toggle-file-symbols"
