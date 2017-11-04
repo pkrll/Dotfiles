@@ -29,17 +29,27 @@
   'cmd-shift-c': 'custom:toggle-ftp'
   'cmd-shift-1': 'bookmarks:view-all'
   'cmd-shift-m': 'remote-ftp:toggle'
-'atom-text-editor':
-  'cmd-shift-2': 'bookmarks:toggle-bookmark'
-  'cmd-shift-b': 'latex:build'
-  'alt-ctrl-c': 'latex:clean'
+  "cmd-shift-o": "custom:toggle-outline-view"
+  'ctrl-l': 'core:move-left'
+  'ctrl-p': 'core:move-up'
+  'ctrl-ö': 'core:move-down'
+  'ctrl-ä': 'core:move-right'
   "ctrl-x right": "pane:show-next-item"
   "ctrl-x ctrl-right": "pane:show-next-item"
   "ctrl-x left": "pane:show-previous-item"
   "ctrl-x ctrl-left": "pane:show-previous-item"
-  "cmd-H": "custom:toggle-fold"
+  "ctrl-x ctrl-l": "pane:show-previous-item"
+  "ctrl-x l": "pane:show-previous-item"
+  "ctrl-x ctrl-ä": "pane:show-next-item"
+  "ctrl-x ä": "pane:show-next-item"
+'atom-text-editor':
+  'cmd-shift-2': 'bookmarks:toggle-bookmark'
+  'cmd-shift-b': 'latex:build'
+  'alt-ctrl-c': 'latex:clean'
+  "cmd-h": "custom:toggle-fold"
   'shift-cmd-B': 'fuzzy-finder:toggle-git-status-finder'
 "atom-workspace atom-text-editor":
+  "ctrl-x ctrl-l": "pane:show-previous-item" # must rebind it in editor mode
   'ctrl-l': 'core:move-left'
   'ctrl-p': 'core:move-up'
   'ctrl-ö': 'core:move-down'

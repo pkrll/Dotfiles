@@ -27,23 +27,8 @@ atom.commands.add 'atom-text-editor', 'custom:toggle-fold', ->
   else
     editor.foldCurrentRow();
 
-_disable = (packageName) ->
-  if atom.packages.isPackageActive(packageName)
-    atom.packages.disablePackage(packageName)
-
-_enable = (packageName) ->
-  if atom.packages.isPackageActive(packageName) == false
-    atom.packages.enablePackage(packageName)
-
-_tryForPackage = (editor, fileExtension, packageName) ->
-  if editor.buffer.file.path.endsWith(fileExtension)
-    _enable(packageName)
-    return true
-  else
-    _disable(packageName)
-    return false
-
-
-atom.workspace.onDidStopChangingActivePaneItem (item) ->
-  if atom.workspace.isTextEditor(item)
-    _tryForPackage(item, ".tex", "latex")
+atom.commands.add '.platform-darwin', 'custom:toggle-outline-view', ->
+  editor = atom.workspace.getActiveTextEditor()
+  if atom.workspace.isTextEditor(editor)
+    atom.commands.dispatch(atom.views.getView(editor), "minimap:toggle")
+    atom.commands.dispatch(atom.views.getView(editor), "outline-view:toggle")
