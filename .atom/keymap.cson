@@ -47,8 +47,11 @@
   'cmd-shift-b': 'latex:build'
   'alt-ctrl-c': 'latex:clean'
   "cmd-h": "custom:toggle-fold"
+  "cmd-H": "custom:toggle-fold"
   'shift-cmd-B': 'fuzzy-finder:toggle-git-status-finder'
+  'ctrl-w': 'atomic-emacs:copy-region-as-kill'
 "atom-workspace atom-text-editor":
+  "ctrl-<": 'multi-cursor:expandDown'
   "ctrl-x ctrl-l": "pane:show-previous-item" # must rebind it in editor mode
   'ctrl-l': 'core:move-left'
   'ctrl-p': 'core:move-up'
@@ -76,6 +79,6 @@
 ".platform-darwin atom-text-editor":
   "ctrl-.": "symbols-view:go-to-declaration"
   "ctrl-:": "symbols-view:toggle-file-symbols"
-  "alt-.": "command-palette:toggle"
+  "alt-x": "command-palette:toggle"
   "cmd-alt-up": "symbols-view:return-from-declaration"
   "ctrl-x ctrl-a": "tree-view:add-file"

@@ -31,9 +31,9 @@ git_status() {
       GIT_PROMPT="$GIT_PROMPT$PROMPT"
     fi
 
-    unset $PROMPT
-    unset $BEHIND
-    unset $AHEAD
+    unset PROMPT
+    unset BEHIND
+    unset AHEAD
   fi
 
   # Untracked
@@ -46,7 +46,7 @@ git_status() {
 
     GIT_PROMPT="$GIT_PROMPT$PROMPT"
 
-    unset $PROMPT
+    unset PROMPT
   fi
 
   # Deleted
@@ -59,7 +59,7 @@ git_status() {
 
     GIT_PROMPT="$GIT_PROMPT$PROMPT"
 
-    unset $PROMPT
+    unset PROMPT
   fi
 
   # Modified
@@ -72,7 +72,7 @@ git_status() {
 
     GIT_PROMPT="$GIT_PROMPT$PROMPT"
 
-    unset $PROMPT
+    unset PROMPT
   fi
 
   # Staged
@@ -85,7 +85,7 @@ git_status() {
 
     GIT_PROMPT="${GIT_PROMPT}${PROMPT}"
 
-    unset $PROMPT
+    unset PROMPT
   fi
 
   if [[ -n $GIT_PROMPT ]]; then
