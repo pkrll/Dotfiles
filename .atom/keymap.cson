@@ -42,6 +42,7 @@
   "ctrl-x l": "pane:show-previous-item"
   "ctrl-x ctrl-ä": "pane:show-next-item"
   "ctrl-x ä": "pane:show-next-item"
+  "ctrl-x ctrl-m": "build:select-active-target"
 'atom-text-editor':
   'cmd-shift-2': 'bookmarks:toggle-bookmark'
   'cmd-shift-b': 'latex:build'
@@ -75,7 +76,6 @@
   "ctrl-alt-ä": "editor:move-to-next-subword-boundary"
   "ctrl-alt-L": "editor:select-to-previous-subword-boundary"
   "ctrl-alt-Ä": "editor:select-to-next-subword-boundary"
-  "ctrl-x ctrl-m": "build:select-active-target"
 ".platform-darwin atom-text-editor":
   "ctrl-.": "symbols-view:go-to-declaration"
   "ctrl-:": "symbols-view:toggle-file-symbols"

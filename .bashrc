@@ -1,6 +1,12 @@
 # SHELL PROMPT
 export PATH="~/.composer/vendor/bin:/usr/local/mysql/bin:/usr/local/mysql/support-files:/usr/local/bin:/Users/ardalansamimi/Public/Git/Bash/AMPStart:/Users/ardalansamimi/Library/Haskell/bin:~/.dotfiles/setup:$PATH"
 
+export PATH="$PATH:$HOME/.cargo/bin"
+export JUNIT_HOME="/usr/local/share/java"
+export PATH="$PATH:$JUNIT_HOME"
+export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit4-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
+
+
 # Don't put duplicate lines or lines starting with space in the history
 export HISTCONTROL=erasedups:ignorespace
 HISTSIZE=500

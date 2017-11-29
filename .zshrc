@@ -10,12 +10,14 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+export PATH="$PATH:$HOME/.cargo/bin"
+export JUNIT_HOME="/usr/local/share/java"
+export PATH="$PATH:$JUNIT_HOME"
+export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit4-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
+
 ################
 # COLORS
 ################
-export JUNIT_HOME="$HOME/Public/junit"
-export PATH="$PATH:$JUNIT_HOME"
-export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
 
 export CLICOLOR=1
 export LSCOLORS=Cxfxaxdxbxegedabagacad #MacOS only
