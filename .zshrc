@@ -10,7 +10,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.cargo/bin:/usr/local/share/astyle/bin"
 export JUNIT_HOME="/usr/local/share/java"
 export PATH="$PATH:$JUNIT_HOME"
 export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit4-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
