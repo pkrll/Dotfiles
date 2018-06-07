@@ -51,6 +51,7 @@
   "cmd-H": "custom:toggle-fold"
   'shift-cmd-B': 'fuzzy-finder:toggle-git-status-finder'
   'ctrl-w': 'atomic-emacs:copy-region-as-kill'
+  'shift-alt-tab': 'editor:auto-indent'
 "atom-workspace atom-text-editor":
   "ctrl-<": 'multi-cursor:expandDown'
   "ctrl-x ctrl-l": "pane:show-previous-item" # must rebind it in editor mode

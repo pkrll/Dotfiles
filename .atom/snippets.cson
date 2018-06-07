@@ -1,5 +1,41 @@
 # Snippets
 
+#Swift
+'.source.swift':
+  'Swift Package':
+    prefix: 'package'
+    body: """
+import PackageDescription
+
+let package = Package(
+    name: "${1:package name}"
+)
+    """
+  'Document header':
+    prefix: 'document'
+    body: """
+//
+// ${1:filename}.swift
+// Created by Ardalan Samimi
+//
+    """
+
+# Editor config
+'.source.editorconfig':
+  'Editor config':
+    prefix: 'conf'
+    body: """
+root = ${1:true}
+
+[*]
+charset = utf-8
+indent_style = ${2:tab}
+indent_size = ${3:2}
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+    """
+
 # Haskell snippets
 '.source.haskell':
   'Datatype definition':
@@ -10,7 +46,6 @@
 -}
 data ${1:identifier} = ${2:constructor}
     """
-'.source.haskell':
   'Normal function without specification':
     prefix: 'fun'
     body: """
