@@ -19,6 +19,16 @@ let package = Package(
 // Created by Ardalan Samimi
 //
     """
+  'Swift documentation':
+    prefix: 'swiftdoc'
+    body: """
+/**
+ *  ${1:Description}
+ *
+ *  ${2:- Parameter ${3:name}: ${4:description}}
+ *  ${5:- Returns: ${6:description}}
+ */
+    """
 
 # Editor config
 '.source.editorconfig':
