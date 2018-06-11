@@ -21,3 +21,7 @@
 	up = remote update
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
+[push]
+	followTags = true
