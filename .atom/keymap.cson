@@ -83,3 +83,5 @@
   "alt-x": "command-palette:toggle"
   "cmd-alt-up": "symbols-view:return-from-declaration"
   "ctrl-x ctrl-a": "tree-view:add-file"
+".tree-view":
+  'a': 'tree-view:add-file'

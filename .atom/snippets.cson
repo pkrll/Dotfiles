@@ -15,8 +15,10 @@ let package = Package(
     prefix: 'document'
     body: """
 //
-// ${1:filename}.swift
-// Created by Ardalan Samimi
+//  ${1:filename}.swift
+//  ${2:projectname}
+//
+//  Created by Ardalan Samimi on ${3:date}.
 //
     """
   'Swift documentation':
