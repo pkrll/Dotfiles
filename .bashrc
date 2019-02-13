@@ -47,6 +47,12 @@ force_color_prompt=yes
 # related
 ###########
 
+#. ~/.dotfiles/completion
+
+if [ -d /usr/local/etc/bash_completion.d ]; then
+	 for f in /usr/local/etc/bash_completion.d/*; do source $f; done
+fi
+
 # enable programmable completion features
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then

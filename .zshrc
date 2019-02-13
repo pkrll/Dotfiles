@@ -10,9 +10,10 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-export PATH="$PATH:$HOME/.cargo/bin:/usr/local/share/astyle/bin:/usr/local/opt/gcc-mips/bin:/usr/local/opt/gdb-mips/bin:$HOME/Public/SonarScanner/bin"
+export PATH="$PATH:$HOME/.cargo/bin:/usr/local/share/astyle/bin:/usr/local/opt/gcc-mips/bin:/usr/local/opt/gdb-mips/bin:$HOME/Public/SonarScanner/bin:$HOME/Public/Git/encore/release"
 export JUNIT_HOME="/usr/local/share/java"
 export PATH="$PATH:$JUNIT_HOME"
+export PATH="$HOME/Public/Git/encore/release:${PATH}"
 export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit4-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
 
 ################
@@ -41,6 +42,7 @@ fi
 zstyle ':completion:*:*:git:*' script ~/.dotfiles/completion/.git-completion.zsh
 zstyle ':completion:*' special-dirs true # Fixes completion on ../
 zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' rehash true
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**' # autocomplete on lowercase etc
 fpath=(~/.dotfiles/completion ~/.dotfiles/functions ~/.dotfiles/functions/gitprompt $fpath)
 autoload -Uz lsgit clean git_status git_branch git_remote_name git_root_level compinit && compinit
@@ -74,3 +76,4 @@ else
     setprompt
   }
 fi
+export PATH="/usr/local/sbin:$PATH"

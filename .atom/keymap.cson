@@ -52,6 +52,7 @@
   'shift-cmd-B': 'fuzzy-finder:toggle-git-status-finder'
   'ctrl-w': 'atomic-emacs:copy-region-as-kill'
   'shift-alt-tab': 'editor:auto-indent'
+  "cmd-ctrl-1": "theme-switch:prev"
 "atom-workspace atom-text-editor":
   "ctrl-<": 'multi-cursor:expandDown'
   "ctrl-x ctrl-l": "pane:show-previous-item" # must rebind it in editor mode
@@ -71,13 +72,16 @@
   "alt-P": "core:move-to-top"
   "alt-Ö": "core:move-to-bottom"
   "alt-ä": "editor:move-to-end-of-word"
+  'ctrl-left': 'editor:move-to-beginning-of-word'
   "alt-L": "editor:select-to-beginning-of-word"
   "alt-Ä": "editor:select-to-end-of-word"
+  'ctrl-right': 'editor:move-to-end-of-word'
   "ctrl-alt-l": "editor:move-to-previous-subword-boundary"
   "ctrl-alt-ä": "editor:move-to-next-subword-boundary"
   "ctrl-alt-L": "editor:select-to-previous-subword-boundary"
   "ctrl-alt-Ä": "editor:select-to-next-subword-boundary"
 ".platform-darwin atom-text-editor":
+  "shift-cmd-space": "goto-definition:go"
   "ctrl-.": "symbols-view:go-to-declaration"
   "ctrl-:": "symbols-view:toggle-file-symbols"
   "alt-x": "command-palette:toggle"

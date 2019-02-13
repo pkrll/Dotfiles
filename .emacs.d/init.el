@@ -21,7 +21,7 @@
  '(linum-format "%d ")
  '(package-selected-packages
    (quote
-    (flycheck sublime-themes dracula-theme sr-speedbar with-editor rich-minority ggtags dash company-irony)))
+    (swift-mode flycheck sublime-themes dracula-theme sr-speedbar with-editor rich-minority ggtags dash company-irony)))
  '(scroll-bar-mode nil)
  '(scroll-conservatively 100)
  '(semantic-c-dependency-system-include-path (quote ("/usr/local/include/" "/usr/include")))
@@ -34,13 +34,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil)))))
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+;(package-initialize)
+(setq package-enable-at-startup nil) (package-initialize)
 
 ;; =============================
 ;; Path
@@ -88,7 +89,7 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 ;; theme
-(load-theme 'spolsky)
+(load-theme 'dracula)
 
 ;;(font-lock-add-keywords
 ;; 'c-mode '(("\\<\\(\\sw+\\) ?(" 1 'font-lock-function-name-face)))
@@ -145,4 +146,3 @@
 
 ;;(set-frame-font "Menlo:pixelsize=13")
 (set-face-attribute 'default nil :family "Menlo" :height 144 :weight 'normal)
-

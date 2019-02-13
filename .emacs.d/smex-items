@@ -1,22 +1,22 @@
 
 ;; ----- smex-history -----
 (
+ package-install
+ package-refresh-contents
  hs-minor-mode
  customize-apropos
  yas-load-directory
  yas-new-snippet
  customize-mode
- java-mode
- package-delete
 )
 
 ;; ----- smex-data -----
 (
- (package-install . 36)
+ (package-install . 38)
  (ggtags-mode . 11)
  (ggtags-create-tags . 2)
  (ggtags-view-search-history . 1)
- (package-refresh-contents . 16)
+ (package-refresh-contents . 17)
  (load-theme . 51)
  (company-mode . 1)
  (company-complete . 1)

@@ -1,5 +1,59 @@
 # Snippets
 
+#Encore
+'.source.enc':
+  'Class':
+    prefix: 'class'
+    body: """
+${1:modifier} class ${2:className}
+  $0
+end
+"""
+  'Main class':
+    prefix: 'main'
+    body: """
+active class Main
+  def main(): unit
+    $0
+  end
+end
+"""
+  'Method':
+    prefix: 'def'
+    body: """
+def ${1:methodName}(${2:${3:argument}: ${4:type}}): ${5:return type}
+  $0
+end
+"""
+  'Match':
+    prefix: 'match'
+    body: """
+match ${1:Expression} with
+  case ${2:Pattern} => ${3:Expression}
+end
+"""
+  'let-in':
+    prefix: 'let'
+    body: """
+let
+  ${1:var} = ${2:Expression}
+in
+  ${3:Expression}
+end
+"""
+  'if-else':
+    prefix: 'if'
+    body: """
+if ${1:Expression} then
+  ${2:Expression}
+${3:else
+  ${4:Expression}}
+end
+"""
+
+
+
+
 #Swift
 '.source.swift':
   'Swift Package':
@@ -30,6 +84,17 @@ let package = Package(
  *  ${2:- Parameter ${3:name}: ${4:description}}
  *  ${5:- Returns: ${6:description}}
  */
+    """
+
+# Javascript
+'.source.js':
+  'Jest test case':
+    prefix: 'jest'
+    body: """
+test('${1:description}', () => {
+  ${2:setup}
+  expect(${3:test}).toBe(${4:expected});
+});
     """
 
 # Editor config
