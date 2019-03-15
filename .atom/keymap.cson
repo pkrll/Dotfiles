@@ -43,6 +43,7 @@
   "ctrl-x ctrl-ä": "pane:show-next-item"
   "ctrl-x ä": "pane:show-next-item"
   "ctrl-x ctrl-m": "build:select-active-target"
+  'ctrl-x ctrl-b': 'build:trigger'
 'atom-text-editor':
   'cmd-shift-2': 'bookmarks:toggle-bookmark'
   'cmd-shift-b': 'latex:build'
