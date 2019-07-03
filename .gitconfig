@@ -4,8 +4,9 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Ardalan Samimi
-	email = ardalan.samimi@gmail.com
+        name = Ardalan Samimi
+        email = ardalan.samimi@bontouch.com
+        signingkey = 6870F3AE8C1BD0F8
 [core]
 	excludesfile = /Users/ardalansamimi/.dotfiles/.gitignore_global
 	editor = /usr/bin/nano
