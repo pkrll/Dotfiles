@@ -1,19 +1,19 @@
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 [user]
         name = Ardalan Samimi
         email = ardalan.samimi@bontouch.com
-        signingkey = 6870F3AE8C1BD0F8
+        signingkey = AECC3F5BDB43AF73
 [core]
 	excludesfile = /Users/ardalansamimi/.dotfiles/.gitignore_global
 	editor = /usr/bin/nano
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg2
+	program = /usr/local/bin/gpg2
 [credential]
 	helper = osxkeychain
 [alias]
@@ -25,5 +25,6 @@
 	last = log -1 HEAD
 	ignore = update-index --assume-unchanged
 	unignore = update-index --no-assume-unchanged
+	p = push
 [push]
 	followTags = true
