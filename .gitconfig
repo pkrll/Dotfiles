@@ -17,6 +17,8 @@
 [credential]
 	helper = osxkeychain
 [alias]
+	pl = pull
+	ps = push
 	co = checkout
 	st = status
 	ci = commit
@@ -25,6 +27,5 @@
 	last = log -1 HEAD
 	ignore = update-index --assume-unchanged
 	unignore = update-index --no-assume-unchanged
-	p = push
 [push]
 	followTags = true
