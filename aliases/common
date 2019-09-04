@@ -12,6 +12,11 @@ alias egrep='egrep --color=auto'
 alias update='git up'
 alias cdgit="cd ~/Public/Git"
 alias g='git'
+alias gco='git checkout'
+alias gci='git commit'
+alias gps='git push'
+alias gpl='git pull'
+alias ga='git add'
 
 # For non-macos and terminals support --color arg
 if [ -x /usr/bin/dircolors ]; then
