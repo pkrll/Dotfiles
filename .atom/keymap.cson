@@ -56,6 +56,7 @@
   "cmd-ctrl-1": "theme-switch:prev"
 "atom-workspace atom-text-editor":
   "ctrl-<": 'multi-cursor:expandDown'
+  'ctrl-§': 'multi-cursor:expandDown'
   "ctrl-x ctrl-l": "pane:show-previous-item" # must rebind it in editor mode
   'ctrl-l': 'core:move-left'
   'ctrl-p': 'core:move-up'
@@ -82,6 +83,7 @@
   "ctrl-alt-L": "editor:select-to-previous-subword-boundary"
   "ctrl-alt-Ä": "editor:select-to-next-subword-boundary"
 ".platform-darwin atom-text-editor":
+  'cmd-shift-e': 'tree-view:toggle'
   "shift-cmd-space": "goto-definition:go"
   "ctrl-.": "symbols-view:go-to-declaration"
   "ctrl-:": "symbols-view:toggle-file-symbols"
