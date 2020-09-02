@@ -6,14 +6,14 @@
 [user]
         name = Ardalan Samimi
         email = ardalan.samimi@bontouch.com
-        signingkey = AECC3F5BDB43AF73
+	signingkey = 02C30D626F90E6DE
 [core]
 	excludesfile = /Users/ardalansamimi/.dotfiles/.gitignore_global
 	editor = /usr/bin/nano
 [commit]
 	gpgsign = true
 [gpg]
-	program = /usr/local/bin/gpg2
+	program = /usr/local/bin/gpg
 [credential]
 	helper = osxkeychain
 [alias]
