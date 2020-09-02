@@ -15,6 +15,7 @@ export JUNIT_HOME="/usr/local/share/java"
 export PATH="$PATH:$JUNIT_HOME"
 export PATH="$HOME/Public/Git/encore/release:${PATH}"
 export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit4-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
+export GPG_TTY=`tty`
 
 ################
 # COLORS
