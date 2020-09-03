@@ -1,8 +1,3 @@
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [user]
         name = Ardalan Samimi
         email = ardalan.samimi@gmail.com
@@ -27,6 +22,11 @@
 	last = log -1 HEAD
 	ignore = update-index --assume-unchanged
 	unignore = update-index --no-assume-unchanged
-	uncommit = git reset --soft HEAD^
+	uncommit = reset --soft HEAD^
 [push]
 	followTags = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
