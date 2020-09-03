@@ -27,5 +27,6 @@
 	last = log -1 HEAD
 	ignore = update-index --assume-unchanged
 	unignore = update-index --no-assume-unchanged
+	uncommit = git reset --soft HEAD^
 [push]
 	followTags = true
