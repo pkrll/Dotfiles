@@ -17,7 +17,7 @@ alias gci='git commit'
 alias gps='git push'
 alias gpl='git pull'
 alias ga='git add'
-alias gitclean='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias gitclean='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -d'
 # For non-macos and terminals support --color arg
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dotfiles/.dircolors && eval "$(dircolors -b ~/.dotfiles/.dircolors)" || eval "$(dircolors -b)"
