@@ -59,7 +59,10 @@ fi
 # Different terminal cases
 if [[ $TERM_PROGRAM == "Hyper" ]]; then
   autoload -Uz promptinit; promptinit
-  prompt pure
+  
+  if [[ -f ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  fi
 else
   TITLE="\e]0;Terminal: `pwd`\a"
   if [[ $TERM_PROGRAM == "Apple_Terminal" ]]; then
@@ -71,12 +74,13 @@ else
       TITLE="\e]0;${USER}@${IPADR}: `pwd`\a"
     fi
   fi
-
-  precmd () {
-    print -Pn $TITLE
-    setprompt
-  }
 fi
+
+precmd () {
+  print -Pn $TITLE
+  setprompt
+}
+
 export PATH="/usr/local/sbin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
