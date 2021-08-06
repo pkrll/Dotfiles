@@ -1,31 +1,29 @@
-# Dotfiles
-A total mess right now, and mainly for my own convenience, but if you want to use my setup just clone the repo to your home directory and run the install script.
+<img alt="logo" src=".presentation/image.jpg">
 
 ### Installation
+
+Start by installing
+
+* Xcode from  [Xcode Releases](https://xcodereleases.com),
+* [Homebrew](brew.sh)
+
+Then clone the repository:
+
 ```shell
-❯ git clone https://github.com/pkrll/Dotfiles
-❯ mv Dotfiles .dotfiles
+$ git clone https://github.com/pkrll/Dotfiles
+$ mv Dotfiles .dotfiles
 ```
 
-Then run ``.makesym.sh`` in the ``setup`` folder. And that's it.
+Run the app installation script:
 
-### Update
-To update, just run the command:
-```shell
-❯ makesym
---------------------------------
-Running makesym.sh...
+```bash
+$ cd .dotfiles/setup
+$ ./install.sh
+```
 
-Retrieving latest changes from the repository
+Run the script to symbolically link the dotfiles and preferences files:
 
-Already up-to-date.
---------------------------------
-
-...
-
-Done linking.
-
-Use the command resource to update
-your settings.
---------------------------------
+```bash
+$ cd .dotfiles/setup
+$ ./symlink.sh
 ```
