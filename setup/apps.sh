@@ -66,6 +66,7 @@ install_app 920404675	# Monodraw
 
 echo "Installing apps via Homebrew..."
 
+install_app_brew_cask "google-chrome"
 install_app_brew_cask "zoom"
 install_app_brew_cask "figma"
 install_app_brew_cask "nova"
