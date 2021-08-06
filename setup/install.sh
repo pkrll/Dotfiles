@@ -59,6 +59,7 @@ install_app 803453959 	# Slack
 install_app 1278508951 	# Trello
 install_app 1480068668 	# Messenger
 install_app 747648890   # Telegram
+install_app 1482454543	# Twitter
 install_app 1532419400  # MeetingBar
 install_app 1024640650  # CotEditor
 install_app 1114196460  # RocketFuel
@@ -72,6 +73,12 @@ install_app_brew_cask "zoom"
 install_app_brew_cask "figma"
 install_app_brew_cask "nova"
 install_app_brew_cask "hyper"
+install_app_brew_cask "twobird"
+install_app_brew_cask "charles"
+install_app_brew_cask "notion"
+install_app_brew_cask "linear"
+install_app_brew_cask "postman"
+install_app_brew_cask "sublime-merge"
 
 install_app_brew "nvm"
 set_up_nvm
