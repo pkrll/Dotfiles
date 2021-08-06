@@ -15,7 +15,7 @@
 ##########
 syncdir=~/.dotfiles
 backdir=~/.dotfiles_backup
-files=".zshrc .inputrc .bashrc .bash_profile .vimrc .vim .emacs.d .gitconfig .atom/snippets.cson .atom/keymap.cson .atom/init.coffee"
+files=".hyper.js .zshrc .inputrc .bashrc .bash_profile .vimrc .vim .emacs.d .gitconfig .atom/snippets.cson .atom/keymap.cson .atom/init.coffee"
 
 ##########
 # Setup
