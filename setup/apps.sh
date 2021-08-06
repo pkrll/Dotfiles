@@ -63,6 +63,7 @@ install_app 1532419400  # MeetingBar
 install_app 1024640650  # CotEditor
 install_app 1114196460  # RocketFuel
 install_app 920404675	# Monodraw
+install_app 1475897096  # Jira Cloud
 
 echo "Installing apps via Homebrew..."
 
