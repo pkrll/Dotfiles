@@ -69,6 +69,11 @@ echo "Installing apps via Homebrew..."
 install_app_brew_cask "zoom"
 install_app_brew_cask "figma"
 install_app_brew_cask "nova"
+install_app_brew_cask "hyper"
 
 install_app_brew "nvm"
 set_up_nvm
+
+echo "Installing automanually"
+
+curl -fsSL https://get.deta.dev/cli.sh | sh
