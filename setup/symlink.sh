@@ -58,3 +58,10 @@ linkFilesInFolder "preferences/home" ~
 linkFilesInFolder "preferences/xcode/CodeSnippets" ~/Library/Developer/Xcode/UserData/CodeSnippets
 linkFilesInFolder "preferences/xcode/FontAndColorThemes" ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 linkFilesInFolder "preferences/xcode/KeyBindings" ~/Library/Developer/Xcode/UserData/KeyBindings
+
+echo ""
+echo "Done linking."
+echo ""
+echo "Use the command resource to update"
+echo "your settings."
+echo "----------------------------------"
