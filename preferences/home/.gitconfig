@@ -1,15 +1,15 @@
 [user]
 	name = Ardalan Samimi
 	email = ardalan.samimi@gmail.com
-	signingkey = 02C30D626F90E6DE
+	signingkey = 67096C4DD9446B83
 [core]
-	excludesfile = /Users/ardalansamimi/.dotfiles/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = /usr/bin/nano
 	pager = delta
 [commit]
 	gpgsign = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = gpg
 [credential]
 	helper = osxkeychain
 [alias]
