@@ -17,12 +17,13 @@ install_app() {
 }
 
 install_app_brew_cask() {
-	APP_NAME=$1
+	APP_NAME="${2:-$1}"
+	COMMAND=$1
 	
-	mdfind "kMDItemKind == 'Application'" | grep  -i $APP_NAME &> /dev/null
+	mdfind "kMDItemKind == 'Application'" | grep -i $APP_NAME &> /dev/null
 	if [ $? != 0 ]; then
 		echo "Installing ${APP_NAME}"
-		brew install --cask $APP_NAME
+		brew install --cask $COMMAND
 	else
 		echo "Skipping ${APP_NAME}..."
 	fi
@@ -31,7 +32,7 @@ install_app_brew_cask() {
 install_app_brew() {
 	APP_NAME=$1
 	
-	if [ ! command -v $APP_NAME &> /dev/null ]; then
+	if ! [ -x "$(command -v ${APP_NAME})" ]; then
 		echo "Installing ${APP_NAME}"
 		brew install $APP_NAME
 	else
@@ -48,10 +49,21 @@ set_up_nvm() {
 	npm install -g npm@latest
 }
 
-if [ ! command -v mas &> /dev/null ]; then
-	echo "Installing MAS..."
-	brew install mas
-fi
+set_up_deta() {
+	if ! [ -x "$(command -v deta)" ]; then
+		echo "Installing Deta..."
+		curl -fsSL https://get.deta.dev/cli.sh | sh
+	fi
+}
+
+function set_up_mas() {
+	if ! [ -x "$(command -v mas)" ]; then
+		echo "Installing MAS..."
+		brew install mas
+	fi	
+}
+
+set_up_mas
 
 echo "Installing apps from Mac App Store..."
 
@@ -68,7 +80,7 @@ install_app 1475897096  # Jira Cloud
 
 echo "Installing apps via Homebrew..."
 
-install_app_brew_cask "google-chrome"
+install_app_brew_cask "google-chrome" "Chrome"
 install_app_brew_cask "zoom"
 install_app_brew_cask "figma"
 install_app_brew_cask "nova"
@@ -79,6 +91,7 @@ install_app_brew_cask "notion"
 install_app_brew_cask "linear"
 install_app_brew_cask "postman"
 install_app_brew_cask "sublime-merge"
+install_app_brew_cask "spotify"
 
 install_app_brew "nvm"
 install_app_brew "swiftlint"
@@ -86,4 +99,4 @@ set_up_nvm
 
 echo "Installing automanually"
 
-curl -fsSL https://get.deta.dev/cli.sh | sh
+set_up_deta
