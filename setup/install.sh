@@ -81,6 +81,7 @@ install_app_brew_cask "postman"
 install_app_brew_cask "sublime-merge"
 
 install_app_brew "nvm"
+install_app_brew "swiftlint"
 set_up_nvm
 
 echo "Installing automanually"

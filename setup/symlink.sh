@@ -33,6 +33,7 @@ linkFilesInFolder() {
         echo "Source: $syncdir/$1/$file"
         echo "Target: $2/$file"
         
+        mkdir -p $2
         ln -sf $syncdir/$1/$file $2/$file
     done
 }
