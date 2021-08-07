@@ -14,3 +14,5 @@ if [ -d $backdir ]; then
 else
     echo "$backdir does not exist!"
 fi
+
+brew cleanup
