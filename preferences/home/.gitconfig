@@ -1,11 +1,11 @@
 [user]
 	name = Ardalan Samimi
-	email = ardalan.samimi@gmail.com
-	signingkey = 67096C4DD9446B83
+	email = ardalan@userspace.me
+	signingkey = AE6EB3B6
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = /usr/bin/nano
-	pager = delta
+	pager = less
 [commit]
 	gpgsign = true
 [gpg]
