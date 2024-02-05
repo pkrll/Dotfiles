@@ -68,33 +68,24 @@ set_up_mas
 echo "Installing apps from Mac App Store..."
 
 install_app 803453959 	# Slack
-install_app 1278508951 	# Trello
-install_app 1480068668 	# Messenger
-install_app 747648890   # Telegram
-install_app 1482454543	# Twitter
 install_app 1532419400  # MeetingBar
 install_app 1024640650  # CotEditor
 install_app 1114196460  # RocketFuel
 install_app 920404675	# Monodraw
-install_app 1475897096  # Jira Cloud
 
 echo "Installing apps via Homebrew..."
 
-install_app_brew_cask "google-chrome" "Chrome"
+install_app_brew_cask "firefox"
 install_app_brew_cask "zoom"
 install_app_brew_cask "figma"
-install_app_brew_cask "nova"
-install_app_brew_cask "hyper"
-install_app_brew_cask "twobird"
-install_app_brew_cask "charles"
 install_app_brew_cask "notion"
-install_app_brew_cask "linear-linear"
 install_app_brew_cask "postman"
 install_app_brew_cask "sublime-merge"
-install_app_brew_cask "spotify"
+install_app_brew_cask "proxyman"
 
 install_app_brew "nvm"
-install_app_brew "swiftlint"
+install_app_brew "mint"
+
 set_up_nvm
 
 echo "Installing automanually"

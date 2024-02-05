@@ -13,7 +13,7 @@ function setprompt() {
     fi
   fi
 
-  export PROMPT='%F{blue}at ${GITPROMPT}
+  export PROMPT='%F{magenta}at ${GITPROMPT}
 %F{magenta}%B❯%b%F{white} '
   export RPROMPT='$STSPROMPT'
 }

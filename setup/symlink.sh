@@ -38,6 +38,29 @@ linkFilesInFolder() {
     done
 }
 
+copyFilesToFolder() {
+    cd "${syncdir}/${1}"
+    FILES="* .[^.]*"
+    for file in $FILES; do
+        [ -e "$file" ] || continue
+        
+        echo "----------------------------------"
+        echo "Processing $file"
+        
+        if fileExists "${file}"; then
+            backupFile $file $2 $backdir/$1
+        fi
+        
+        echo ""
+        echo "Creating symlink"
+        echo "Source: $syncdir/$1/$file"
+        echo "Target: $2/$file"
+        
+        mkdir -p $2
+        cp $syncdir/$1/$file $2/$file
+    done
+}
+
 backupFile () {
     echo ""
     echo "Moving file..."
@@ -55,10 +78,10 @@ backupFile () {
 }
 
 mkdir -p $backdir
-linkFilesInFolder "preferences/home" ~
-linkFilesInFolder "preferences/xcode/CodeSnippets" ~/Library/Developer/Xcode/UserData/CodeSnippets
-linkFilesInFolder "preferences/xcode/FontAndColorThemes" ~/Library/Developer/Xcode/UserData/FontAndColorThemes
-linkFilesInFolder "preferences/xcode/KeyBindings" ~/Library/Developer/Xcode/UserData/KeyBindings
+copyFilesToFolder "preferences/home" ~
+copyFilesToFolder "preferences/xcode/CodeSnippets" ~/Library/Developer/Xcode/UserData/CodeSnippets
+copyFilesToFolder "preferences/xcode/FontAndColorThemes" ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+copyFilesToFolder "preferences/xcode/KeyBindings" ~/Library/Developer/Xcode/UserData/KeyBindings
 
 echo ""
 echo "Done linking."

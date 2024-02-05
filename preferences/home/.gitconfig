@@ -1,7 +1,7 @@
 [user]
-	name = Ardalan Samimi
-	email = ardalan@userspace.me
-	signingkey = AE6EB3B6
+	name = NAME
+	email = EMAIL
+	signingkey = KEYID
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = /usr/bin/nano
@@ -24,6 +24,8 @@
 	ignore = update-index --assume-unchanged
 	unignore = update-index --no-assume-unchanged
 	uncommit = reset --soft HEAD^
+	branches = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	clear = "!git branch --merged | egrep -v \"(^\\*|master|main|dev)\" | xargs git branch -d"
 [push]
 	followTags = true
 [filter "lfs"]
@@ -31,7 +33,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[delta]
-	side-by-side = true
 [pull]
 	rebase = false
